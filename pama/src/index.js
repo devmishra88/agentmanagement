@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme({
   typography: {
+    htmlFontSize:12,
     allVariants: {
       textTransform: "none",
       fontSize: 15,
