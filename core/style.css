@@ -1,0 +1,530 @@
+label
+{
+	cursor:pointer;
+}
+
+.Table
+{
+	font-family:"Lucida Grande",arial,sans-serif;
+	font-size:12px;
+}
+
+.Text
+{
+	background-color: #F4F4F4;
+	background-attachment: scroll;
+	border: 2px solid #b2b2b2;
+	color: #000;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	font-size-adjust: none;
+	line-height:22px;
+	-x-system-font: none;
+	margin:0px;
+	padding:5px;
+}
+
+.NoAccessText
+{
+	background-attachment: scroll;
+	border: 1px solid #CCC;
+	color:#CCC;
+	font-family: "Lucida Grande",arial,sans-serif;
+	font-size:13px;
+	font-weight:normal;
+	-x-system-font: none;
+	margin:1px;
+	padding:1px 3px 3px 3px;
+}
+
+.AlignRight
+{
+	border:0px solid #F00;
+	float:right;
+	text-align:right;
+}
+.Error
+{
+	border:1px solid #999;
+	padding:10px;
+	color:#000;
+	font-size:12px;
+}
+
+.ErrorText
+{
+	background-color:#CE0000;
+	color:#FFF;
+	padding:10px;
+	font-size:13px;
+}
+
+.Error legend
+{
+	border:1px solid #999;
+	background-color:#CE0000;
+	padding:3px;
+	font-size:16px;
+	margin:0px;
+	color:#EEE;
+}
+
+.Success
+{
+	border:1px solid #999;
+	padding:10px;
+	color:#000;
+	font-size:12px;
+}
+
+.SuccessText
+{
+	background-color:#80C31C;
+	color:#FFF;
+	padding:10px;
+	font-size:13px;
+}
+
+.Success legend
+{
+	border:1px solid #999;
+	background-color:#80C31C;
+	font-size:16px;
+	padding:3px;
+	margin:0px;
+	color:#EEE;
+}
+
+.Message
+{
+	border:1px solid #999;
+	padding:10px;
+	color:#000;
+	font-size:12px;
+}
+
+.MessageText
+{
+	background-color:#FFFFBE;
+	color:#000;
+	padding:10px;
+	font-size:13px;
+}
+
+.Message legend
+{
+	border:1px solid #999;
+	background-color:#FFFFBE;
+	font-size:16px;
+	padding:3px;
+	margin:0px;
+	color:#000;
+}
+
+.LegendBox
+{
+	border:1px solid #999;
+	padding:10px;
+	color:#000;
+	font-size:12px;
+}
+
+.LegendBoxText
+{
+	background-color:#FFFFBE;
+	color:#000;
+	padding:10px;
+	font-size:13px;
+}
+
+.LegendBox legend
+{
+	border:1px solid #999;
+	background-color:#818181;
+	font-size:16px;
+	padding:3px;
+	margin:0px;
+	color:#FFF;
+}
+
+.ActiveNumber
+{
+	font-size:13px;
+	padding:2px;
+}
+
+.InactiveNumber
+{
+	font-size:11px;
+	padding:2px;
+}
+
+#Copyright
+{
+	color:#666;
+	font-size:12px;
+	text-align:center;
+}
+
+#Header
+{
+	border:0px solid #F00;
+	color:#FFF;
+	background-color:#000;
+	padding:0px 30px 0px 30px;
+}
+
+#Header div,h3,h1
+{
+	font-weight:normal;
+	border:0px solid #F0F;
+}
+
+#HeadTop
+{
+	padding-top:3px;
+}
+
+#HeadTopRight
+{
+	width:50%;
+	min-width:400px;
+	text-align:right;
+}
+
+#HeadMiddle
+{
+	padding:5px 5px 0px 5px;
+}
+
+#HeadBottom
+{
+	padding:0px;
+	margin:0;
+}
+
+#WelcomeMSG
+{
+	font-size:14px;
+	color:#FFF;
+}
+
+#IconContainer
+{
+	padding-top:3px;
+	margin-top:3px;
+	height:50px;
+	overflow:auto;
+	border:0px solid #F00;
+	vertical-align:middle;
+}
+
+#IconContainer img
+{
+	margin-top:10px;
+	border:0px solid #F00;
+}
+
+#Container
+{
+	border:0px solid #F00;
+	padding:10px;
+	padding-top:0px;
+	background-color:#dedede;
+}
+
+#SidebarContent
+{
+	width:93%;
+	padding-top:10px;
+	margin-top:0px;
+	padding-left:10px;
+}
+
+#ContentArea
+{
+	padding-top:10px;
+}
+
+#ContentHead
+{
+	padding:10px;
+	font-weight:bold;
+	text-align:left;
+	background-color:#C3D9FF;
+}
+
+#ContentBody
+{
+	padding:10px;
+	font-size:12px;
+	text-align:left;
+	background-color:#FFF;
+}
+
+.BackGround
+{
+	padding:5px;
+	border:3px double #FFF;
+	background-color:#DDD;
+}
+
+.Tips
+{
+	font-size:9px;
+	color:#777;
+}
+
+.RedTip
+{
+	font-size:9px;
+	color:#A00;
+	cursor:pointer;
+}
+
+.TableHead
+{
+	background-color:#666;
+	font-size:13px;
+	text-align:center;
+	padding:5px;
+	color:#FFF;
+}
+
+.SubTableHead
+{
+	background-color:#BBB;
+	font-size:13px;
+	text-align:center;
+	padding:5px;
+	color:#FFF;
+}
+
+.TableHead a,.TableHead a:link,.TableHead a:visited
+{
+	background-color:#666;
+	text-align:center;
+	color:#FFF;
+}
+
+.Row1
+{
+	background-color:#FFFFFF;
+	text-align:center;
+	font-size:12px;
+	padding:3px;
+	color:#333;
+}
+
+.Row1 a,.Row1 a:link,.Row1 a:visited
+{
+	background-color:#E0E9E9;
+	text-align:center;
+	font-size:12px;
+	color:#333;
+}
+
+.Row2
+{
+	background-color:#FFFFCC;
+	text-align:center;
+	font-size:12px;
+	padding:3px;
+	color:#333;
+}
+
+.Row2 a,.Row2 a:link,.Row2 a:visited
+{
+	background-color:#B4D8E7;
+	text-align:center;
+	font-size:12px;
+	color:#333;
+}
+
+.Holiday
+{
+	background-color:#F96;
+	text-align:center;
+	font-size:12px;
+	padding:5px;
+	color:#333;
+}
+
+.Holiday a,.Holiday a:link,.Holiday a:visited
+{
+	color:#333;
+}
+
+.DateHoliday
+{
+	background-color:#E55;
+	text-align:center;
+	font-size:12px;
+	padding:5px;
+	color:#FFF;
+}
+
+.DateHoliday a,.DateHoliday a:link,.DateHoliday a:visited
+{
+	color:#FFF;
+}
+
+.OptionalHoliday
+{
+	background-color:#F99;
+	text-align:center;
+	font-size:12px;
+	padding:5px;
+	color:#000;
+}
+
+.OptionalHoliday a,.OptionalHoliday a:link,.OptionalHoliday a:visited
+{
+	color:#000;
+}
+
+.Leave,.Leave a,.Leave a:link,.Leave a:visited
+{
+	color:#285BD2;
+	font-size:10px;
+}
+
+.Todo,.Todo a,.Todo a:link,.Todo a:visited
+{
+	color:#E17100;
+	border:1px solid #E17100;
+	font-size:11px;
+}
+
+.FieldName
+{
+	vertical-align:middle;
+	font-size:14px;
+	width:20%;
+	text-align:right;
+}
+
+.FieldValue
+{
+	font-size:14px;
+}
+
+.balloonstyle
+{
+	position:absolute;
+	top: -500px;
+	left: 0;
+	padding: 5px;
+	visibility: hidden;
+	border:1px solid black;
+	font:normal 12px Verdana;
+	line-height: 18px;
+	z-index: 100;
+	background-color: white;
+	min-width:60px;
+	max-width:800px;
+	width:auto;
+	color:#000;
+	/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135,Strength=5);
+}
+
+#arrowhead
+{
+	z-index: 99;
+	position:absolute;
+	top: -500px;
+	left: 0;
+	visibility: hidden;
+}
+
+.CurrentDate
+{
+	padding:5px;
+	text-align:center;
+	background-color:#FF9;
+	color:#000;
+	font-size:11px;
+}
+
+.NormalDate
+{
+	font-size:11px;
+	padding:5px;
+	text-align:center;
+	background-color:#EEE;
+}
+
+.CalendarHead
+{
+	background-color:#666;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.TodoBox
+{
+	padding:3px 3px 3px 32px;
+	text-align:right;
+	background-color:#757116;
+	color:#FFF;
+	font-size:10px;
+	font-weight:bold;
+}
+.CommentBox
+{
+	padding:3px 3px 3px 10px;
+	text-align:right;
+	background-color:#B80000;
+	color:#FFF;
+	font-size:10px;
+	font-weight:bold;
+}
+
+.FileBox
+{
+	padding:3px 3px 3px 40px;
+	text-align:right;
+	background-color:#00477F;
+	color:#FFF;
+	font-size:10px;
+	font-weight:bold;
+}
+
+.SearchResult
+{
+	color:#C00;
+	font-style:italic;
+}
+
+.Reminder
+{
+	color:#069;
+}
+
+.LateReminder
+{
+	color:#C00;
+}
+
+.CompletedReminder
+{
+	text-decoration:line-through;
+	color:#BBB;
+}
+
+.SearchTodo div
+{
+	padding-top:3px;
+}
+
+.SearchComment div
+{
+	padding-top:3px;
+}
+
+.SearchFile div
+{
+	padding-top:3px;
+}
