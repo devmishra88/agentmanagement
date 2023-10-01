@@ -49,7 +49,20 @@ pama/jspm_packages/
 web_modules/
 pama/web_modules/
 #supported php library
+api/
+assets/
+core/
+css/
+fcmapi/
+fonts/
+go7/
+images/
+includes/
+media/
+razorpay-php/
 superadmin/
+ref/
+web/
 paymentresponse.php
 settings.php
 alter.txt
