@@ -1,138 +1,62 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import Card from "@mui/material/Card";
-import LockOpenIcon from "@mui/icons-material/LockOpen";
-import { Button, Divider, Typography, TextField } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
 
-function Forgot() {
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [hasAlphabet, setHasAlphabet] = useState(false);
-  const handleMobileNumberChange = (e) => {
-    const inputValue = e.target.value;
-    setMobileNumber(inputValue);
+import * as React from "react";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Link,
+  Grid,
+  Box,
+  Typography,
+  Container,
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-    const hasAlphabetCharacter = /[a-zA-Z]/.test(inputValue);
-
-    // Update the validation state based on the presence of alphabet characters
-    setHasAlphabet(hasAlphabetCharacter);
-  };
+export default function Forgot() {
+ 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "#f7f7f7",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Card
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
         sx={{
-          minWidth: "300px",
-          // padding:"40px",
-
-          height: "70vh",
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            height: "40px",
-            textAlign: "left",
-            paddingTop: "10px",
-            backgroundColor: "#F5F5F5",
-            //   display:'flex',
-          }}
-        >
-          <ArrowBackIosNewIcon
-            fontSize="small"
-            style={{
-              color: "#2196f3",
-            }}
-          />
-          <LockOpenIcon fontSize="small" />
-          <Typography
-            variant="sub title"
-            sx={{
-              display: "inline",
-              paddingLeft: "35px",
-              fontSize: "20px",
-            }}
-            fontWeight="italic"
-          >
-            Forget Password
-          </Typography>
-        </Box>
-        <Divider />
-        <Box
-          sx={{
-            paddingTop: "70px",
-            paddingBottom: "30px",
-          }}
-        >
-          <LockOpenIcon
-            sx={{
-              fontSize: "70px",
-            }}
-          />
-        </Box>
-
-        <Typography variant="h6" fontWeight="550">
-          Password Recovery
+        <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Forget Password
         </Typography>
-
-        <Box>
-          <InputLabel
-            sx={{
-              paddingTop: "60px",
-              paddingLeft: "20px",
-              textAlign: "left",
-            }}
-          >
-            Mobile
-          </InputLabel>
-
+        <Box component="form"  noValidate sx={{ mt: 1 }}>
           <TextField
-            id="forgetmobileNumber"
-            variant="standard"
-            size="small"
-            type="tel"
-            hiddenLabel
-            value={mobileNumber}
-            onChange={handleMobileNumberChange}
+            margin="normal"
             required
-            sx={{
-              width: "80%",
-              backgroundColor: "#FFFFFF",
-            }}
-            InputProps={{ disableUnderline: true }}
-          ></TextField>
-
-          {hasAlphabet && (
-            <>
-              <Typography color="red" fontSize="12px" textAlign="left">
-                Please Match the requested format
-              </Typography>
-            </>
-          )}
+            fullWidth
+            id="phone"
+            label="Phone"
+            name="phone"
+            autoComplete="off"
+            autoFocus
+            variant="standard"
+          />
+         
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            RECOVER PASSWORD
+          </Button>
+         
         </Box>
-
-        <Button
-          variant="contained"
-          sx={{
-            margin: "40px",
-            marginTop: "15px",
-            backgroundColor: "#2296F2",
-          }}
-        >
-          RECOVER PASSWORD
-        </Button>
-      </Card>
-    </Box>
+      </Box>
+     
+    </Container>
   );
 }
-
-export default Forgot;
