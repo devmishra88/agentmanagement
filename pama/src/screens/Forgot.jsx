@@ -29,12 +29,14 @@ function Forgot() {
     justifyContent:"center"
    }}>
     <Card sx={{
-        minWidth:"300px",
+        minWidth:"100%",
         // padding:"40px",
 
-        height:'70vh'
+        height:'95vh'
     }}>
      <Box sx={{
+         position:'absolute',
+         top:'0px',
         width:'100%',
         height:'40px',
         textAlign:'left',
@@ -52,9 +54,10 @@ function Forgot() {
           
             display:'inline',
             paddingLeft:'35px',
-            fontSize:'20px'
+            fontSize:'20px',
            
-        }} fontWeight='italic'>Forget Password</Typography>
+           
+        }} >Forget Password</Typography>
      </Box>
      <Divider />
    <Box sx={{
@@ -67,18 +70,23 @@ function Forgot() {
    
    </Box>
 
-   <Typography variant='h6' fontWeight='550'>Password Recovery</Typography>
+   <Typography  sx={{
+    fontWeight:'700',
+   fontSize:'2rem'
+   }}>Password Recovery</Typography>
 
    <Box >
-   <InputLabel sx={{
-           paddingTop:'60px',
-           paddingLeft:'20px',
+   
+
+<InputLabel sx={{
+            paddingTop:'60px',
+            paddingLeft:'40px',
+           
            textAlign:'left'
             }}>Mobile</InputLabel>
-
-          <TextField
-            id="forgetmobileNumber"
-            variant="standard"
+            <TextField
+            id="mobileNumber"
+            variant="filled"
             size="small"
             type='tel'
             hiddenLabel
@@ -86,10 +94,11 @@ function Forgot() {
             onChange={handleMobileNumberChange}
             required
    
+        
             sx={{
                width:'80%',
-               backgroundColor:'#FFFFFF',
-              
+             padding:'0px',
+               
            }}
            InputProps={{ disableUnderline: true }}
             ></TextField>
@@ -110,6 +119,7 @@ function Forgot() {
    sx={{
      margin:'40px',
      marginTop:'15px',
+    width:'70%',
      backgroundColor:'#2296F2'
    }}>
     RECOVER PASSWORD</Button>
