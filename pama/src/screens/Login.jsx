@@ -102,10 +102,11 @@ export default function Login() {
      
          sx={{
             width:'100%',
-           
+         
             padding:'0px',
             
         }}
+        InputProps={{ disableUnderline: true }}
          ></TextField>
 
          {
@@ -143,7 +144,7 @@ export default function Login() {
                 width:'100%',
                 border:"none"
             }}
-           
+            InputProps={{ disableUnderline: true }}
            ></TextField>
            
         </Box>
