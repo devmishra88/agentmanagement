@@ -49,7 +49,6 @@ pama/jspm_packages/
 web_modules/
 pama/web_modules/
 #supported php library
-api/
 assets/
 core/
 css/
