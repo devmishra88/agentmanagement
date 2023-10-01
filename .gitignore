@@ -52,7 +52,6 @@ pama/web_modules/
 assets/
 fonts/
 go7/
-media/
 superadmin/
 paymentresponse.php
 settings.php
