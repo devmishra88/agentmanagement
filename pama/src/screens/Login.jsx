@@ -1,199 +1,110 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import LockOpenIcon from "@mui/icons-material/LockOpen";
+import * as React from "react";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Link,
+  Grid,
+  Box,
+  Typography,
+  Container,
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-import InputLabel from "@mui/material/InputLabel";
-import { Divider, TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+function Copyright(props) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright"} &copy;{` `}
+      <Link color="inherit" href="#">
+        PAMA
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
-export default function Login() {
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [hasAlphabet, setHasAlphabet] = useState(false);
-  const [password, setPassword] = useState("");
-  const [hasError, setHasError] = useState(false);
-
-  // Function to handle input changes
-  const handlePasswordChange = (event) => {
-    const newPassword = event.target.value;
-    setPassword(newPassword);
-
-    // Check if the password is empty
-    if (newPassword.trim() === "") {
-      setHasError(true);
-    } else {
-      setHasError(false);
-    }
-  };
-
-  const handleMobileNumberChange = (e) => {
-    const inputValue = e.target.value;
-    setMobileNumber(inputValue);
-
-    const hasAlphabetCharacter = /[a-zA-Z]/.test(inputValue);
-
-    // Update the validation state based on the presence of alphabet characters
-    setHasAlphabet(hasAlphabetCharacter);
+export default function SignIn() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      phone: data.get("phone"),
+      password: data.get("password"),
+    });
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "#f7f7f7",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Card
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
         sx={{
-          minWidth: "300px",
-          padding: "40px",
-          height: "560px",
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        {/* for icons and title */}
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
-        >
-          <LockOpenIcon
-            sx={{
-              fontSize: "70px",
-            }}
+        <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="phone"
+            label="Phone"
+            name="phone"
+            autoComplete="off"
+            autoFocus
+            variant="standard"
           />
-          <Typography
-            sx={{
-              fontSize: "2rem",
-              fontWeight: "700",
-              marginTop: "40px",
-            }}
-          >
-            Agent Login
-          </Typography>
-        </Box>
-        {/*  for form  */}
-        <Box
-          sx={{
-            paddingTop: "35px",
-            paddingBottom: "0px",
-          }}
-        >
-          <InputLabel
-            sx={{
-              textAlign: "left",
-            }}
-          >
-            Mobile
-          </InputLabel>
           <TextField
-            id="mobileNumber"
-            variant="filled"
-            size="small"
-            type="tel"
-            hiddenLabel
-            value={mobileNumber}
-            onChange={handleMobileNumberChange}
+            margin="normal"
             required
-            sx={{
-              width: "100%",
-
-              padding: "0px",
-            }}
-            InputProps={{ disableUnderline: true }}
-          ></TextField>
-
-          {hasAlphabet && (
-            <>
-              <Typography color="red" fontSize="12px" textAlign="left">
-                Please Match the requested format
-              </Typography>
-            </>
-          )}
-
-          <Divider sx={{ marginTop: "3px", marginBottom: "3px" }} />
-
-          <InputLabel
-            sx={{
-              textAlign: "left",
-            }}
-          >
-            Password
-          </InputLabel>
-          <TextField
-            required
-            hiddenLabel
-            id="password"
+            fullWidth
+            name="password"
+            label="Password"
             type="password"
-            variant="filled"
-            size="small"
-            value={password}
-            onChange={handlePasswordChange}
-            error={hasError}
-            helperText={hasError ? "Please enter a password" : ""}
-            sx={{
-              width: "100%",
-              border: "none",
-            }}
-            InputProps={{ disableUnderline: true }}
-          ></TextField>
-        </Box>
-        <Box>
+            id="password"
+            autoComplete="off"
+            variant="standard"
+          />
           <Button
+            type="submit"
+            fullWidth
             variant="contained"
-            sx={{
-              margin: "5px",
-
-              fontSize: "0.8rem",
-              maxWidth: "90%",
-              minWidth: "90%",
-              fontWeight: "700",
-            }}
+            sx={{ mt: 3, mb: 2 }}
           >
-            SIGN IN
+            Sign In
           </Button>
-
-          <Typography
-            style={{
-              textDecoration: "none",
-            }}
+          <Grid
+            container
             sx={{
-              padding: "40px",
-              fontSize: "18px",
-              color: "#2196f3",
-              textDecoration: "",
+              display: `flex`,
+              justifyContent: `space-between`,
+              textAlign: `center`,
             }}
           >
-            <Link
-              to="/forgot"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              Forgot Password?
-            </Link>
-          </Typography>
-
-          <Typography
-            sx={{
-              color: "#9e9e9e",
-              fontSize: "14px",
-            }}
-          >
-            &copy; 2020 Prem News Agency
-          </Typography>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+          </Grid>
         </Box>
-      </Card>
-    </Box>
+      </Box>
+      <Copyright sx={{ mt: 8, mb: 4 }} />
+    </Container>
   );
 }
