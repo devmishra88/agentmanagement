@@ -49,8 +49,6 @@ pama/jspm_packages/
 web_modules/
 pama/web_modules/
 #supported php library
-assets/
-fonts/
 superadmin/
 paymentresponse.php
 settings.php

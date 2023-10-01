@@ -1,0 +1,4 @@
+[04-Feb-2021 19:13:36 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPUnit_Framework_TestCase' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/tests/Svg/StyleTest.php:15
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/tests/Svg/StyleTest.php on line 15

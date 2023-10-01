@@ -1,0 +1,4 @@
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Property\AtRule' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Property/CSSNamespace.php on line 8
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Renderable' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Property/AtRule.php on line 8
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Property\AtRule' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Property/Charset.php on line 12
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Property\AtRule' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Property/Import.php on line 10

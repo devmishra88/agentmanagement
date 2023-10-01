@@ -1,0 +1,72 @@
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Polygon.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Polygon.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Group' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Anchor.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Anchor.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Polyline.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Polyline.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/RadialGradient.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/RadialGradient.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Circle.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Circle.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Rect.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Rect.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Shape.php:13
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Shape.php on line 13
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Ellipse.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Ellipse.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/ClipPath.php:13
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/ClipPath.php on line 13
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Stop.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Stop.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Image.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Image.php on line 11
+[04-Feb-2021 19:19:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/StyleTag.php:13
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/StyleTag.php on line 13
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Group.php:13
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Group.php on line 13
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Line.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Line.php on line 11
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Text.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Text.php on line 11
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/LinearGradient.php:15
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/LinearGradient.php on line 15
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\AbstractTag' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/UseTag.php:11
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/UseTag.php on line 11
+[04-Feb-2021 19:19:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Svg\Tag\Shape' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Path.php:13
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-svg-lib/src/Svg/Tag/Path.php on line 13

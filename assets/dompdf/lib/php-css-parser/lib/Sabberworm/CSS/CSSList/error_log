@@ -1,0 +1,17 @@
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\CSSList\CSSBlockList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/Document.php:8
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/Document.php on line 8
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Renderable' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSList.php on line 15
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\CSSList\CSSList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/KeyFrame.php:7
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/KeyFrame.php on line 7
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\CSSList\CSSBlockList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/AtRuleBlockList.php:10
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/AtRuleBlockList.php on line 10
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\CSSList\CSSList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSBlockList.php:16
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSBlockList.php on line 16

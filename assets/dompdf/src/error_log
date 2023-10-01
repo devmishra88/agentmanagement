@@ -1,0 +1,6 @@
+[04-Feb-2021 13:51:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\Renderer\AbstractRenderer' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Renderer.php:25
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Renderer.php on line 25
+[04-Feb-2021 13:51:35 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Dompdf.php on line 610
+[04-Feb-2021 13:51:35 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Dompdf.php on line 631

@@ -1,0 +1,5 @@
+[04-Feb-2021 15:45:53 UTC] PHP Fatal error:  Interface 'Dompdf\Canvas' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Adapter/CPDF.php on line 37
+[04-Feb-2021 15:45:53 UTC] PHP Fatal error:  Interface 'Dompdf\Canvas' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Adapter/CPDF_bak250219.php on line 37
+[04-Feb-2021 15:45:53 UTC] PHP Fatal error:  Interface 'Dompdf\Canvas' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Adapter/GD.php on line 24
+[04-Feb-2021 15:45:53 UTC] PHP Fatal error:  Interface 'Dompdf\Canvas' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Adapter/CPDF-bak.php on line 37
+[04-Feb-2021 15:45:54 UTC] PHP Fatal error:  Interface 'Dompdf\Canvas' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Adapter/PDFLib.php on line 34
