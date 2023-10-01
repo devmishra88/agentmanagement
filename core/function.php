@@ -1615,16 +1615,6 @@ function SmallText($Text,$Target = '',$Count = 80)
 	$Text = substr($Text,$Start,$Count);
 	return "...".$Text."...";
 }
-function RemoveSlashes()
-{
-	if ($_POST)
-	{
-		foreach ($_POST as $key => $value)
-		{
-			$_POST[$key] = stripslashes($_POST[$key]);
-		}
-	}
-}
 function StatusBar($Width)
 {
 	?>
@@ -2194,4 +2184,100 @@ function pdo_fixed_rows($query,$index)
 	}
 	return $rows;
 }
-?>
+function add_slashes()
+{
+	global $DontAddSlash;
+	if(@$DontAddSlash > 0)
+	{
+		return true;
+	}
+	foreach ($_POST as $key => $value)
+	{
+		if(is_array($value))
+		{
+			foreach($value as $key1 => $value1)
+			{
+				if(is_array($value1))
+				{
+					foreach($value1 as $key2 => $value2)
+					{
+						@$_POST[@$key1][@$key2] =addslashes(@$_POST[@$key1][@$key2]);
+					}
+				}
+				else
+				{
+					@$_POST[$key][$key1] =addslashes(@$_POST[$key][$key1]);
+				}
+			}
+		}
+		else
+		{
+			@$_POST[$key] = addslashes(@$_POST[$key]);
+		}
+	}
+}
+if (@$DontAddSlash != 1)
+{
+	add_slashes();
+}
+
+function removeslashes()//remove slashes 
+{
+	if ($_POST)
+	{
+		foreach ($_POST as $key => $value)
+		{
+			if(is_array($value))
+			{
+				foreach ($value as $key1 => $value1)
+				{
+					if(is_array($value1))
+					{
+						foreach($value1 as $key2 => $value2)
+						{
+							@$_POST[$key1][$key2] =wb_stripslashes(@$_POST[$key1][$key2]);
+						}
+					}
+					else
+					{
+						@$_POST[$key][$key1] =wb_stripslashes(@$_POST[$key][$key1]);
+					}
+				}
+			}
+			else
+			{
+				@$_POST[$key] = wb_stripslashes(@$_POST[$key]);
+			}
+		}
+	}
+}
+function remove_slashes()
+{
+	if ($_POST)
+	{
+		foreach ($_POST as $key => $value)
+		{
+			if(is_array($value))
+			{
+				foreach ($value as $key1 => $value1)
+				{
+					if(is_array($value1))
+					{
+						foreach($value1 as $key2 => $value2)
+						{
+							@$_POST[$key1][$key2] =wb_stripslashes(@$_POST[$key1][$key2]);
+						}
+					}
+					else
+					{
+						@$_POST[$key][$key1] =wb_stripslashes(@$_POST[$key][$key1]);
+					}
+				}
+			}
+			else
+			{
+				@$_POST[$key] = wb_stripslashes(@$_POST[$key]);
+			}
+		}
+	}
+}

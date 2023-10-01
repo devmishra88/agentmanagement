@@ -1,10 +1,10 @@
 <?
 $db_url	= "localhost";
-$db_name = "orlopay_db"; //write here the DB name, you have to use a single database for the whole script
+$db_name = "dealcorn_agentmgmt"; //write here the DB name, you have to use a single database for the whole script
 $database_catalog = $db_name;
-$db_username = "orlopay_user";    //obviously, username here
+$db_username = "dealcorn_agntmgmt";    //obviously, username here
 
-$db_password = 'UlO7fXcDaOedpPjD';
+$db_password = 'mANYW3DWImIY';
 
 $Prefix ="orlop_";
 /*if($_SERVER['IsLocal'] == 'Yes' || $_SERVER['SERVER_NAME'] == 'agency.orlopay.com' || $_SERVER['SERVER_NAME'] == 'orlopay.com'|| $_SERVER['SERVER_NAME'] == 'www.orlopay.com')*/
@@ -15,12 +15,12 @@ $host		= explode('.', $parsedUrl['path']);
 
 $domainname	= $host[1].".".$host[2];
 
-if($domainname == 'orlonow.com')
+/*if($domainname == 'orlonow.com')
 {
 	$db_name = "orlonow_db"; //write here the DB name, you have to use a single database for the whole script
 	$database_catalog = $db_name;
 	$db_username = "orlonow_user";    //obviously, username here
-}
+}*/
 
 $RemoteDataBaseServer = "postgres";
 

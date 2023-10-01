@@ -32,10 +32,9 @@ try {
 	echo 'Connection failed: ' . $e->getMessage();
 	die;
 }
-
 if($_SERVER['IsLocal'] == true)
 {
-	include_once($_SERVER['DOCUMENT_ROOT']."/agency/settings.php");
+	include_once($_SERVER['DOCUMENT_ROOT']."/clients/premsahu/agentmanagement/settings.php");
 
 	$PDfHost = "http://orlopay/api/"; // Server URL 
 }
@@ -43,13 +42,16 @@ else
 {
 	include_once($_SERVER['DOCUMENT_ROOT']."/settings.php");
 }
+
 $DomPDFFolder = "../assets/dompdf/";
 $PDfHost = "http://".$SiteDomainName.""; // Server URL 
 
+include_once "../core/function.php";
+
 include_once "function.php";
+
 include_once "function_pdf.php";
 
-include_once "../core/function.php";
 require __DIR__ . '/libs/php-jwt/vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
@@ -201,7 +203,11 @@ else
 {
 	$hasvalidtoken	= false;
 }
-
+if(!$_POST && !$_GET)
+{
+	include_once "index.php";
+	die;
+}
 if(!$hasvalidtoken && ($_POST['Mode'] != "AppLogin" && $_POST['Mode'] != "RecoverPassword" && $_POST['Mode'] != "GetAllClients" && $_POST['Mode'] != "DownloadReport" && $_POST['Mode'] != "AddContactRequest" && $_POST['Mode'] != "SendLoginOtp" && $_POST['Mode'] != "VerifyCustomerLogin" && $_POST['Mode'] != "ViewOutstanding" && $_POST['InvoiceClientid'] == "" && $ByPass != 1))
 {
     $response['success']		= false;
@@ -228,6 +234,5 @@ if($_SERVER['HTTPS'] == "on")
 
 if($_SERVER['IsLocal'] == 'Yes')
 {
-	$ServerAPIURL	= "http://orlopay/agency/api/";
+	$ServerAPIURL	= "http://wpserver/clients/premsahu/agentmanagement/api/";
 }
-?>

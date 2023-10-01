@@ -1,5 +1,5 @@
 <?
-if($isuserinvoice > 0)
+/*if($isuserinvoice > 0)
 {
 	require_once('agency/assets/vendor/razorpay/Razorpay.php');
 }
@@ -8,73 +8,7 @@ else
 	require_once('../assets/vendor/razorpay/Razorpay.php');
 }
 
-use Razorpay\Api\Api;
-
-function add_slashes()
-{
-	foreach ($_POST as $key => $value)
-	{
-		//$_POST[$key] = @htmlentities ($_POST[$key] , ENT_QUOTES);
-	}
-	if (!get_magic_quotes_gpc()) 
-	{
-		foreach ($_POST as $key => $value)
-		{
-			if(is_array($value))
-			{
-				foreach($value as $key1 => $value1)
-				{
-					if(is_array($value1))
-					{
-						foreach($value1 as $key2 => $value2)
-						{
-							$_POST[$key1][$key2] =addslashes($_POST[$key1][$key2]);
-						}
-					}
-					else
-					{
-						$_POST[$key][$key1] =addslashes($_POST[$key][$key1]);
-					}
-				}
-			}
-			else
-			{
-				$_POST[$key] = addslashes($_POST[$key]);
-			}
-		}
-	}
-}
-add_slashes();
-function remove_slashes()
-{
-	if ($_POST)
-	{
-		foreach ($_POST as $key => $value)
-		{
-			if(is_array($value))
-			{
-				foreach ($value as $key1 => $value1)
-				{
-					if(is_array($value1))
-					{
-						foreach($value1 as $key2 => $value2)
-						{
-							$_POST[$key1][$key2] =stripslashes($_POST[$key1][$key2]);
-						}
-					}
-					else
-					{
-						$_POST[$key][$key1] =stripslashes($_POST[$key][$key1]);
-					}
-				}
-			}
-			else
-			{
-				$_POST[$key] = stripslashes($_POST[$key]);
-			}
-		}
-	}
-}
+use Razorpay\Api\Api;*/
 function DetectChromBrowser($UserAgent) 
 { 
 	if (stripos( $UserAgent, 'Chrome') !== false) 
