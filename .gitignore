@@ -51,7 +51,6 @@ pama/web_modules/
 #supported php library
 assets/
 fonts/
-go7/
 superadmin/
 paymentresponse.php
 settings.php
