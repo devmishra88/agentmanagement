@@ -6,11 +6,12 @@ import AddArea from './screens/AddArea';
 
 function App() {
   return (
-    // <Routes>
-    //   <Route path='/' element={<Login/>} />
-    //   <Route path='/forgot' element={<Forgot/>} />
-    // </Routes>
-    <AddArea />
+    <Routes>
+      <Route path='/' element={<Login/>} />
+      <Route path='/forgot' element={<Forgot/>} />
+      <Route path='/addarea' element={<AddArea/>} />
+    </Routes>
+   
   );
 }
 

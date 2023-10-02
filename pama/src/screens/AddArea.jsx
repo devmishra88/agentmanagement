@@ -129,27 +129,28 @@ function AddArea() {
               <Switch defaultChecked />
             </Box>
             <Divider />
-            <Box
+            <Box 
               sx={{
                 position: "fixed",
                 bottom: "-3px",
                 right: "0px",
                 height: "50px",
                 left: "0px",
-                boxShadow: " 0px 5px 10px 0px rgba(0, 0, 0, 0.5)",
+               
                 display:"flex",
                 justifyContent:"flex-end",
                 py:'8px',
                 px:"8px",
                 maxWidth:"394px",
-                mx:"auto"
-               
+                mx:"auto",
+                boxShadow: "-2px -10px 5px 0px rgba(0,0,0,0.75)",
               }}
+             
             >
               <Box sx={{
                 display:"flex",
                 justifyContent:"flex-end",
-               
+                backgroundColor:'red',
               }}>
                 <Button color="primary" sx={{
                     display:"flex",
