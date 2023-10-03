@@ -27,29 +27,19 @@ function AddArea() {
       }}
     >
       <CssBaseline />
-      <Box
-        sx={
-          {
-            // width: "100%",
-            // // height: "10vh",
-            // backgroundColor: "#FFFFFF",
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-          }
-        }
-      >
+      <Box>
         <Box
           sx={{
             width: "100%",
             height: "60px",
             textAlign: "left",
-            // paddingTop: "10px",
+           
             backgroundColor: "#F5F5F5",
             display: "flex",
             justifyContent: "left",
             alignItems: "center",
             px: 2,
+            
           }}
         >
           <MenuIcon
@@ -79,7 +69,7 @@ function AddArea() {
           component="form"
           noValidate
           sx={{
-            pt: 15,
+            pt: 5,
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -98,7 +88,7 @@ function AddArea() {
               required
               fullWidth
               id="phone"
-              label="Phone"
+              label="Name"
               name="phone"
               autoComplete="off"
               autoFocus
@@ -107,7 +97,7 @@ function AddArea() {
 
             <TextField
               margin="normal"
-              required
+            
               fullWidth
               id="remarks"
               label="Remarks"
@@ -125,7 +115,10 @@ function AddArea() {
               alignItems="center"
               width="100%"
             >
-              <Typography>status</Typography>
+              <Typography sx={{
+                fontSize:'17px',
+                fontWeight:'500'
+              }}>Status</Typography>
               <Switch defaultChecked />
             </Box>
             <Divider />
@@ -143,22 +136,23 @@ function AddArea() {
                 px:"8px",
                 maxWidth:"394px",
                 mx:"auto",
-                boxShadow: "-2px -10px 5px 0px rgba(0,0,0,0.75)",
+                backgroundColor:'#F7F7F7',
+                boxShadow: "-1px -5px -2px 0px rgba(0,0,0,0.75)",
               }}
              
             >
               <Box sx={{
                 display:"flex",
                 justifyContent:"flex-end",
-                backgroundColor:'red',
+                // backgroundColor:'red',
               }}>
                 <Button color="primary" sx={{
                     display:"flex",
                     alignItems:"center",
                     gap:"7px",
                     width:"120px",
-                    fontWeight:"700"
-                   
+                    fontWeight:"700",
+                   cursor:'pointer'
                 }} variant="contained">
 <SaveIcon/>
 SAVE
