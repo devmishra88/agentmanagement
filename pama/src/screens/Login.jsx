@@ -41,7 +41,7 @@ export default function SignIn() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main"  >
       <CssBaseline />
       <Box
         sx={{
@@ -58,7 +58,7 @@ export default function SignIn() {
           Sign in
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField
+        <TextField
             margin="normal"
             required
             fullWidth
