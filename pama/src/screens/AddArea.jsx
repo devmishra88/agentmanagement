@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Container,
   CssBaseline,
@@ -5,15 +7,13 @@ import {
   Typography,
   TextField,
   Divider,
-  Card,
-  Paper,
+  Switch,
   Button,
 } from "@mui/material";
-import SaveIcon from '@mui/icons-material/Save';
-import React from "react";
+
+import SaveIcon from "@mui/icons-material/Save";
 import MenuIcon from "@mui/icons-material/Menu";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Switch from "@mui/material/Switch";
 
 function AddArea() {
   return (
@@ -33,13 +33,12 @@ function AddArea() {
             width: "100%",
             height: "60px",
             textAlign: "left",
-           
+
             backgroundColor: "#F5F5F5",
             display: "flex",
             justifyContent: "left",
             alignItems: "center",
             px: 2,
-            
           }}
         >
           <MenuIcon
@@ -64,7 +63,6 @@ function AddArea() {
             Add Area
           </Typography>
         </Box>
-
         <Box
           component="form"
           noValidate
@@ -97,7 +95,6 @@ function AddArea() {
 
             <TextField
               margin="normal"
-            
               fullWidth
               id="remarks"
               label="Remarks"
@@ -115,50 +112,57 @@ function AddArea() {
               alignItems="center"
               width="100%"
             >
-              <Typography sx={{
-                fontSize:'17px',
-                fontWeight:'500'
-              }}>Status</Typography>
+              <Typography
+                sx={{
+                  fontSize: "17px",
+                  fontWeight: "500",
+                }}
+              >
+                Status
+              </Typography>
               <Switch defaultChecked />
             </Box>
             <Divider />
-            <Box 
+            <Box
               sx={{
                 position: "fixed",
                 bottom: "-3px",
                 right: "0px",
                 height: "50px",
                 left: "0px",
-               
-                display:"flex",
-                justifyContent:"flex-end",
-                py:'8px',
-                px:"8px",
-                maxWidth:"394px",
-                mx:"auto",
-                backgroundColor:'#F7F7F7',
+
+                display: "flex",
+                justifyContent: "flex-end",
+                py: "8px",
+                px: "8px",
+                maxWidth: "394px",
+                mx: "auto",
+                backgroundColor: "#F7F7F7",
                 boxShadow: "-1px -5px -2px 0px rgba(0,0,0,0.75)",
               }}
-             
             >
-              <Box sx={{
-                display:"flex",
-                justifyContent:"flex-end",
-                // backgroundColor:'red',
-              }}>
-                <Button color="primary" sx={{
-                    display:"flex",
-                    alignItems:"center",
-                    gap:"7px",
-                    width:"120px",
-                    fontWeight:"700",
-                   cursor:'pointer'
-                }} variant="contained">
-<SaveIcon/>
-SAVE
-
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  // backgroundColor:'red',
+                }}
+              >
+                <Button
+                  color="primary"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "7px",
+                    width: "120px",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                  }}
+                  variant="contained"
+                >
+                  <SaveIcon />
+                  SAVE
                 </Button>
-
               </Box>
             </Box>
           </Box>

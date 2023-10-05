@@ -12,9 +12,6 @@ import {store} from "./store/AppStore"
 const defaultTheme = createTheme({
   typography: {
     htmlFontSize: 12,
-
-const defaultTheme = createTheme({
-  typography: {
     allVariants: {
       textTransform: "none",
       fontSize: 15,
