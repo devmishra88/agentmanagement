@@ -9,6 +9,9 @@ import {
   Divider,
   Switch,
   Button,
+  AppBar,
+  Toolbar,
+  IconButton,
 } from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
@@ -27,47 +30,45 @@ function AddArea() {
       }}
     >
       <CssBaseline />
-      <Box>
-        <Box
-          sx={{
-            width: "100%",
-            height: "60px",
-            textAlign: "left",
-
-            backgroundColor: "#F5F5F5",
-            display: "flex",
-            justifyContent: "left",
-            alignItems: "center",
-            px: 2,
-          }}
-        >
-          <MenuIcon
-            sx={{
-              color: "#52A4FC",
-              fontSize: "30px",
-            }}
-          />
-          <LockOutlinedIcon
-            sx={{
-              paddingLeft: "10px",
-              fontSize: "40px",
-            }}
-          />
-          <Typography
-            sx={{
-              marginLeft: "30px",
-              fontWeight: "bold",
-              fontSize: "18px",
-            }}
+      <AppBar
+        component="nav"
+        sx={{
+          background: `#F7F7F8`,
+        }}
+      >
+        <Toolbar>
+          {/* <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            Add Area
+            <MenuIcon />
+          </IconButton> */}
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          >
+            MUI
           </Typography>
-        </Box>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {/* {navItems.map((item) => (
+              <Button key={item} sx={{ color: '#fff' }}>
+                {item}
+              </Button>
+            ))} */}
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      <Box component="main" sx={{ p: 1, pl: 0, pr: 0 }}>
+        <Toolbar />
         <Box
           component="form"
           noValidate
           sx={{
-            pt: 5,
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -100,7 +101,6 @@ function AddArea() {
               label="Remarks"
               name="remarks"
               autoComplete="off"
-              autoFocus
               variant="standard"
               sx={{
                 my: 5,
@@ -122,32 +122,20 @@ function AddArea() {
               </Typography>
               <Switch defaultChecked />
             </Box>
-            <Divider />
-            <Box
-              sx={{
-                position: "fixed",
-                bottom: "-3px",
-                right: "0px",
-                height: "50px",
-                left: "0px",
 
-                display: "flex",
-                justifyContent: "flex-end",
-                py: "8px",
-                px: "8px",
-                maxWidth: "394px",
-                mx: "auto",
-                backgroundColor: "#F7F7F7",
-                boxShadow: "-1px -5px -2px 0px rgba(0,0,0,0.75)",
-              }}
+            <AppBar
+              position="fixed"
+              sx={{ top: "auto", bottom: 0, background: `#F7F7F8` }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  // backgroundColor:'red',
-                }}
-              >
+              <Toolbar>
+                <Box sx={{ flexGrow: 1 }} />
+                <IconButton color="inherit">
+                  {/* <SearchIcon /> */}
+                </IconButton>
+                <IconButton color="inherit">
+                  {/* <MoreIcon /> */}
+                </IconButton>
+
                 <Button
                   color="primary"
                   sx={{
@@ -163,8 +151,12 @@ function AddArea() {
                   <SaveIcon />
                   SAVE
                 </Button>
-              </Box>
-            </Box>
+
+              </Toolbar>
+            </AppBar>
+
+            <Divider />
+            
           </Box>
         </Box>
       </Box>
