@@ -1,9 +1,13 @@
 import * as React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import FormikControl from "../FormikControl";
+import { request } from "../utils/axios-utils";
+import { useMutation } from "react-query";
 import {
   Avatar,
   Button,
   CssBaseline,
-  TextField,
   Link,
   Grid,
   Box,
@@ -31,17 +35,42 @@ function Copyright(props) {
 }
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      phone: data.get("phone"),
-      password: data.get("password"),
-    });
+  const validationSchema = Yup.object({
+    phone: Yup.string()
+      .matches(/^[0-9]{10}$/, "Invalid phone number")
+      .required("Phone number is required"),
+    password: Yup.string().required("Password is required"),
+  });
+
+  const initialValues = {
+    phone: "",
+    password: "",
   };
 
+  const mutation = useMutation((userData) =>
+    request({ url: `/applogin.php`, method: `POST`, data: userData }).then(
+      (response) => response
+    )
+  );
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      const formData = { Mode: "AppLogin", ...values };
+      mutation.mutate(formData, {
+        onSuccess: (res) => {
+          console.log(res);
+        },
+        onError: (res) => {
+          console.log("Error=>", res);
+        },
+      });
+    },
+  });
+
   return (
-    <Container component="main"  >
+    <Container component="main">
       <CssBaseline />
       <Box
         sx={{
@@ -57,29 +86,31 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-        <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="phone"
-            label="Phone"
+        <form onSubmit={formik.handleSubmit} noValidate>
+          <FormikControl
+            control="input"
+            type="number"
+            label="Phone Number"
             name="phone"
-            autoComplete="off"
-            autoFocus
-            variant="standard"
+            maxLength={10}
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.phone && Boolean(formik.errors.phone)}
+            helperText={formik.touched.phone && formik.errors.phone}
           />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
+          <FormikControl
+            control="input"
             type="password"
-            id="password"
-            autoComplete="off"
-            variant="standard"
+            label="Password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
           />
+
           <Button
             type="submit"
             fullWidth
@@ -102,7 +133,7 @@ export default function SignIn() {
               </Link>
             </Grid>
           </Grid>
-        </Box>
+        </form>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
