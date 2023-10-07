@@ -1,0 +1,6 @@
+[04-Feb-2021 15:45:55 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPUnit_Framework_TestCase' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/tests/RazorpayTest.php:9
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/tests/RazorpayTest.php on line 9
+[04-Feb-2021 15:45:56 UTC] PHP Warning:  require(/mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/vendor/autoload.php): failed to open stream: No such file or directory in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/tests/bootstrap.php on line 2
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  require(): Failed opening required '/mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/tests/bootstrap.php on line 2

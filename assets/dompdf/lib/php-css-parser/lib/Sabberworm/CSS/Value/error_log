@@ -1,0 +1,33 @@
+[04-Feb-2021 19:19:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\PrimitiveValue' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/CSSString.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/CSSString.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\CSSFunction' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/Color.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/Color.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\Value' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/PrimitiveValue.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/PrimitiveValue.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\ValueList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/CSSFunction.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/CSSFunction.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\ValueList' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/RuleValueList.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/RuleValueList.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\PrimitiveValue' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/URL.php:6
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/URL.php on line 6
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Interface 'Sabberworm\CSS\Renderable' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/Value.php on line 7
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\PrimitiveValue' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/Size.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/Size.php on line 5
+[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Sabberworm\CSS\Value\Value' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/ValueList.php:5
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/lib/Sabberworm/CSS/Value/ValueList.php on line 5

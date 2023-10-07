@@ -1,0 +1,44 @@
+[04-Feb-2021 15:45:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Block.php:23
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Block.php on line 23
+[04-Feb-2021 15:45:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/ListBullet.php:18
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/ListBullet.php on line 18
+[04-Feb-2021 15:45:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/NullFrameReflower.php:19
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/NullFrameReflower.php on line 19
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Text.php:21
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Text.php on line 21
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableRow.php:20
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableRow.php on line 20
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Page.php:20
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Page.php on line 20
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\Block' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableCell.php:18
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableCell.php on line 18
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Image.php:20
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Image.php on line 20
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Table.php:19
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Table.php on line 19
+[04-Feb-2021 15:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableRowGroup.php:18
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/TableRowGroup.php on line 18
+[04-Feb-2021 15:45:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\FrameReflower\AbstractFrameReflower' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Inline.php:19
+Stack trace:
+#0 {main}
+  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/FrameReflower/Inline.php on line 19
