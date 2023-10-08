@@ -89,7 +89,7 @@ function ManageArea() {
           <RefreshIcon
             sx={{
               // textAlign:'right',
-              marginLeft: "60px",
+              marginLeft: "40px",
               color: "#52A4FC",
               fontSize: "30px",
             }}
