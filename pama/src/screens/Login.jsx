@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormikControl";
@@ -13,8 +13,15 @@ import {
   Box,
   Typography,
   Container,
+  Backdrop,
+  CircularProgress,
+  IconButton,
+  Snackbar,
+  Stack,
 } from "@mui/material";
+
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import CloseIcon from "@mui/icons-material/Close";
 
 function Copyright(props) {
   return (
@@ -35,6 +42,17 @@ function Copyright(props) {
 }
 
 export default function SignIn() {
+  const [state, setState] = useState({
+    open: false,
+    msg: ``,
+    vertical: "bottom",
+    horizontal: "center",
+  });
+
+  const handleToastMsg = ({ ...newState }) => {
+    setState({ ...state, ...newState });
+  };
+
   const validationSchema = Yup.object({
     phone: Yup.string()
       .matches(/^[0-9]{10}$/, "Invalid phone number")
@@ -53,16 +71,38 @@ export default function SignIn() {
     )
   );
 
+  const action = (
+    <>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={() => handleToastMsg({ open: false, msg: `` })}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </>
+  );
+
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
       const reqObject = { Mode: "AppLogin", logintype: 0, ...values };
-      const formData  = objectToFormData(reqObject);
+      const formData = objectToFormData(reqObject);
 
       mutation.mutate(formData, {
         onSuccess: (res) => {
-          console.log(res);
+          /*console.log(res);*/
+
+          const { data } = res;
+          const { success, msg } = data;
+
+          if (!success) {
+            handleToastMsg({ open: true, msg: msg });
+            /*console.log(data);
+            setErrMsg(msg);*/
+          }
         },
         onError: (res) => {
           console.log("Error=>", res);
@@ -70,6 +110,11 @@ export default function SignIn() {
       });
     },
   });
+
+  const { isLoading /*, isError, isSuccess, data: resdata*/ } = mutation;
+  const { vertical, horizontal, open, msg } = state;
+
+  /*console.log(resdata?.data)*/
 
   return (
     <Container component="main">
@@ -138,6 +183,23 @@ export default function SignIn() {
         </form>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isLoading}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+      <Snackbar
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={open}
+        onClose={() => handleToastMsg({ open: false, msg: `` })}
+        message={<Typography sx={{
+          fontSize:14
+        }}>{msg}</Typography>}
+        key={vertical + horizontal}
+        action={action}
+      />
     </Container>
   );
 }
