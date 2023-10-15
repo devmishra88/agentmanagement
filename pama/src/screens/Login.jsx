@@ -2,7 +2,7 @@ import * as React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormikControl";
-import { request } from "../utils/axios-utils";
+import { request, objectToFormData } from "../utils/axios-utils";
 import { useMutation } from "react-query";
 import {
   Avatar,
@@ -57,7 +57,9 @@ export default function SignIn() {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      const formData = { Mode: "AppLogin", ...values };
+      const reqObject = { Mode: "AppLogin", logintype: 0, ...values };
+      const formData  = objectToFormData(reqObject);
+
       mutation.mutate(formData, {
         onSuccess: (res) => {
           console.log(res);
