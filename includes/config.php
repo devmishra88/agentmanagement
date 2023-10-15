@@ -6,7 +6,7 @@ $db_username = "dealcorn_agntmgmt";    //obviously, username here
 
 $db_password = 'mANYW3DWImIY';
 
-$Prefix ="orlop_";
+$Prefix ="agmt_";
 /*if($_SERVER['IsLocal'] == 'Yes' || $_SERVER['SERVER_NAME'] == 'agency.orlopay.com' || $_SERVER['SERVER_NAME'] == 'orlopay.com'|| $_SERVER['SERVER_NAME'] == 'www.orlopay.com')*/
 
 $hostname	= $_SERVER['SERVER_NAME'];
