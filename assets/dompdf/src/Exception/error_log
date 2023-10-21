@@ -1,4 +1,0 @@
-[04-Feb-2021 15:45:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf\Exception' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Exception/ImageException.php:17
-Stack trace:
-#0 {main}
-  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Exception/ImageException.php on line 17

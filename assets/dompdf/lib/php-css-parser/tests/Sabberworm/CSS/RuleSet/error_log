@@ -1,8 +1,0 @@
-[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPUnit_Framework_TestCase' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/tests/Sabberworm/CSS/RuleSet/LenientParsingTest.php:8
-Stack trace:
-#0 {main}
-  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/tests/Sabberworm/CSS/RuleSet/LenientParsingTest.php on line 8
-[04-Feb-2021 19:19:56 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPUnit_Framework_TestCase' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/tests/Sabberworm/CSS/RuleSet/DeclarationBlockTest.php:9
-Stack trace:
-#0 {main}
-  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/lib/php-css-parser/tests/Sabberworm/CSS/RuleSet/DeclarationBlockTest.php on line 9
