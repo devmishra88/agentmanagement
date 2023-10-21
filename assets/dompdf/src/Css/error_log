@@ -1,1 +1,0 @@
-[04-Feb-2021 15:45:58 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /mnt/wgvol1/orlopay/public_html/agency/assets/dompdf/src/Css/Stylesheet.php on line 1360

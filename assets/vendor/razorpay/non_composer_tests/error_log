@@ -1,6 +1,0 @@
-[04-Feb-2021 15:45:53 UTC] PHP Warning:  include(Razorpay.php): failed to open stream: No such file or directory in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/non_composer_tests/RazorpayTest.php on line 5
-[04-Feb-2021 15:45:53 UTC] PHP Warning:  include(): Failed opening 'Razorpay.php' for inclusion (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/non_composer_tests/RazorpayTest.php on line 5
-[04-Feb-2021 15:45:53 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPUnit_Framework_TestCase' not found in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/non_composer_tests/RazorpayTest.php:9
-Stack trace:
-#0 {main}
-  thrown in /mnt/wgvol1/orlopay/public_html/agency/assets/vendor/razorpay/non_composer_tests/RazorpayTest.php on line 9
