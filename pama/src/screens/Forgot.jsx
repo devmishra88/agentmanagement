@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-export default function Forgot() {
+function Forgot() {
  
   return (
     <Container component="main" maxWidth="xs">
@@ -61,3 +61,5 @@ export default function Forgot() {
     </Container>
   );
 }
+
+export default Forgot;

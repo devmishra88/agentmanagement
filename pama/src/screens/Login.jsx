@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormikControl";
 import { request, objectToFormData } from "../utils/axios-utils";
+import { Copyright, Loader } from "../components";
 import { useMutation } from "react-query";
 import {
   Avatar,
@@ -22,24 +23,6 @@ import {
 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import CloseIcon from "@mui/icons-material/Close";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright"} &copy;{` `}
-      <Link color="inherit" href="#">
-        PAMA
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 export default function SignIn() {
   const [state, setState] = useState({
@@ -183,12 +166,7 @@ export default function SignIn() {
         </form>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
-      <Backdrop
-        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={isLoading}
-      >
-        <CircularProgress color="inherit" />
-      </Backdrop>
+      <Loader open={isLoading} />
       <Snackbar
         autoHideDuration={6000}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}

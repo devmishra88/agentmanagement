@@ -15,8 +15,6 @@ import {
 } from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
-import MenuIcon from "@mui/icons-material/Menu";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 function AddArea() {
   return (
