@@ -219,7 +219,7 @@ if(!$hasvalidtoken && ($_POST['Mode'] != "AppLogin" && $_POST['Mode'] != "Recove
 	die;
 }
 
-$AccountValidationFailedMsg	= "Account validation failed! Please contact support!";
+$AccountValidationFailedMsg	= "Oops! Account validation failed";
 
 $donotusecache	= 1;
 

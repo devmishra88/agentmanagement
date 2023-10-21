@@ -39,6 +39,9 @@ bower_components
 build/Release
 
 # Dependency directories
+build/
+favicon_package_v0.16/
+favicon_package_v0.16.zip
 org/
 node_modules/
 pama/node_modules/
