@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectToken,
@@ -8,27 +8,20 @@ import {
 } from "../slices/authSlice";
 
 const PrivateRoutes = () => {
+  const navigate = useNavigate();
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
 
-  // let auth = {'token':false}
-
   useEffect(() => {
-    if (!isAuthenticated) {
-      // User is not authenticated, redirect to login page
-      //navigate('/login');
-    } else if (isAuthenticated && token) {
-      // Perform server validation if a token exists in local storage
-      // Implement your server validation logic here
-      // If validation fails, log out the user
-      // Example: If your server returns an error, dispatch(logout()) and redirect to login page
+    if (!token?.accesstoken) {
+      navigate('/');
+    } else if (token?.accesstoken && token?.authtoken) {
+      /*perform server validation before any action*/
     }
-  }, [isAuthenticated, token, dispatch]);
+  }, [token, dispatch]);
 
-  const isAuthenticated2 = true
-
-  return isAuthenticated2 ? <Outlet /> : <Navigate to="/" />;
+  return token?.accesstoken ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default PrivateRoutes;

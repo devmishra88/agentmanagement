@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   user: null,
   isAuthenticated: false,
-  token: localStorage.getItem(`${process.env.REACT_APP_STORAGE_KEY}`) || null,
+  token: JSON.parse(localStorage.getItem(`${process.env.REACT_APP_STORAGE_KEY}`)) || null,
 };
 
 const authSlice = createSlice({
@@ -17,7 +17,7 @@ const authSlice = createSlice({
     },
     setToken: (state, action) => {
       state.token = action.payload;
-      localStorage.setItem(`${process.env.REACT_APP_STORAGE_KEY}`, action.payload);
+      localStorage.setItem(`${process.env.REACT_APP_STORAGE_KEY}`, JSON.stringify(action.payload));
     },
     logout: (state) => {
       state.user = null;

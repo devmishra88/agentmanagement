@@ -1,6 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoute";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { useSelector } from "react-redux";
 import { Mainmenu, Apptoster, Loader } from "./components";
 import {
   Login,
@@ -14,6 +16,13 @@ import {
 const queryClient = new QueryClient();
 
 function App() {
+  const navigate = useNavigate();
+  const { token } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (token?.accesstoken) {
+      navigate(`/dashboard`);
+    }
+  }, [token]);
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>

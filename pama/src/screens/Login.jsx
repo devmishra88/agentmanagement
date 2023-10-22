@@ -5,8 +5,9 @@ import FormikControl from "../FormikControl";
 import { request, objectToFormData } from "../utils/axios-utils";
 import { Copyright } from "../components";
 import { useMutation } from "react-query";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { handleToastMsg, toggleLoader } from "../slices/CommonSlice";
+import { setToken } from "../slices/authSlice";
 
 import {
   Avatar,
@@ -22,6 +23,7 @@ import {
 import { LockOutlinedIcon } from "../constants";
 
 export default function SignIn() {
+
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
@@ -52,10 +54,18 @@ export default function SignIn() {
       mutation.mutate(formData, {
         onSuccess: (res) => {
           const { data } = res;
-          const { success, msg } = data;
+          const { success, msg, accesstoken, authtoken, clientdetail } = data;
 
           if (!success) {
             dispatch(handleToastMsg({ toaststatus: true, toastmsg: msg }));
+          } else {
+            dispatch(
+              setToken({
+                accesstoken: accesstoken,
+                authtoken: authtoken,
+                clientdetail: clientdetail,
+              })
+            );
           }
         },
         onError: (res) => {
