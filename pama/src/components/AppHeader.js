@@ -1,9 +1,6 @@
-// import applogo from "../assets/images/logo.png";
-// import newlogo from "../assets/images/newlogo.png";
-
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
-import MenuIcon from "@mui/icons-material/Menu";
+import {MenuIcon} from "../constants"
 
 function AppHeader({ ...props }) {
   const { children } = props;

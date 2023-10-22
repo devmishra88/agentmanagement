@@ -14,9 +14,7 @@ import {
   IconButton,
 } from "@mui/material";
 
-import SaveIcon from "@mui/icons-material/Save";
-import MenuIcon from "@mui/icons-material/Menu";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import {SaveIcon} from "../constants"
 
 function AddAgent() {
   return (

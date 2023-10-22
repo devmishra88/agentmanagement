@@ -7,7 +7,8 @@ import {
   AppBar,
   Toolbar,
 } from "@mui/material";
-import SaveIcon from "@mui/icons-material/Save";
+
+import {SaveIcon} from "../constants"
 
 function AppFooter({ ...props }) {
   const { children } = props;

@@ -18,8 +18,7 @@ import {
   Snackbar,
 } from "@mui/material";
 
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import CloseIcon from "@mui/icons-material/Close";
+import {LockOutlinedIcon, CloseIcon} from "../constants"
 
 export default function SignIn() {
   const [state, setState] = useState({

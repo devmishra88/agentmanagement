@@ -5,13 +5,12 @@ import {
   Button,
   CssBaseline,
   TextField,
-  Link,
-  Grid,
   Box,
   Typography,
   Container,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+
+import {LockOutlinedIcon} from "../constants"
 
 function Forgot() {
  

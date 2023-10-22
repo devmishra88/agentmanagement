@@ -1,20 +1,18 @@
 import React from "react";
-import {
-  Typography,
-  Container,
-  Grid,
-  Card,
-  CardContent,
-} from "@mui/material";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import ReportIcon from "@mui/icons-material/Report";
 import { AppHeader } from "../components";
+
+import { Typography, Container, Grid, Card, CardContent } from "@mui/material";
+
+import {
+  Diversity3Icon,
+  AccountCircleIcon,
+  NewspaperIcon,
+  MapsHomeWorkIcon,
+  InventoryIcon,
+  BarChartIcon,
+  ReceiptLongIcon,
+  ReportIcon,
+} from "../constants";
 
 const Dashboard = () => {
   return (
@@ -214,11 +212,6 @@ const Dashboard = () => {
               </CardContent>
             </Card>
           </Grid>
-          {/* <Grid item xs={6}>
-              <Card>
-                <CardContent>Logout</CardContent>
-              </Card>
-            </Grid> */}
         </Grid>
       </Container>
     </>
