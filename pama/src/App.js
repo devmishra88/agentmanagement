@@ -1,11 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoute";
 import { QueryClientProvider, QueryClient } from "react-query";
-import {Mainmenu} from "./components"
-import Login from "./screens/Login";
-import Forgot from "./screens/Forgot";
-import AddArea from "./screens/AddArea";
-import Dashboard from "./screens/Dashboard";
+import { Mainmenu } from "./components";
+import { Login, Forgot, Dashboard, AddArea } from "./screens";
 
 const queryClient = new QueryClient();
 

@@ -1,11 +1,13 @@
-import AddArea from "./AddArea"
+import Login from "./Login"
+import Forgot from "./Forgot"
 import Dashboard from "./Dashboard"
 import AddAgent from "./AddAgent"
-import Forgot from "./Forgot"
+import AddArea from "./AddArea"
 
 export {
-    AddArea,
-    AddAgent,
-    Dashboard,
+    Login,
     Forgot,
+    Dashboard,
+    AddAgent,
+    AddArea,
 }
