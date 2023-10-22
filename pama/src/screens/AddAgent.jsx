@@ -95,7 +95,35 @@ function AddAgent() {
     setValue(newValue);
   };
 
+  const [address, setAddress] = useState({
+    street: '',
+    city: '',
+    state: '',
+    zip: '',
+  });
 
+  const handleAddressChange = (e) => {
+    const { name, value } = e.target;
+    setAddress({
+      ...address,
+      [name]: value,
+    });
+  };
+
+  const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+
+  const handlePhoneChange = (e) => {
+    const newPhone = e.target.value;
+    setPhone(newPhone);
+    // Use a regular expression to validate the phone number
+    const phonePattern = /^\d{10}$/; // For a 10-digit phone number
+    if (!phonePattern.test(newPhone)) {
+      setPhoneError('Invalid phone number');
+    } else {
+      setPhoneError('');
+    }
+  };
   return (
     <Container
       component="main"
@@ -103,14 +131,18 @@ function AddAgent() {
       sx={{
         padding: '0px',
         height: "100vh",
-        overflow: "hidden",
+        // overflow: "hidden",
         display: "flex",
     flexDirection: "column",
+    position:"relative"
       }}
     >
       <CssBaseline />
       <AppBar position="static" sx={{
          background: `#F7F7F8`,
+         position:'fixed',
+         top:'0px',
+         zIndex:"1000"
       }}>
           <Toolbar>
             <MenuIcon className="material-icons" sx={{
@@ -131,18 +163,24 @@ function AddAgent() {
           </Toolbar>
         </AppBar>
         <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider',  position:'fixed', top:'55px', zIndex:"1000",bgcolor:"#ffffff",width:"100%",display:"flex",justifyContent:"space-between" }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Profile" {...a11yProps(0)} />
           <Tab label="Newspaper Commision" {...a11yProps(1)} />
          
         </Tabs>
+
+{/* <Tabs value={value} onChange={(_, newValue) => setValue(newValue)} aria-label="basic tabs example">
+  <Tab label="Profile" {...a11yProps(0)} />
+  <Tab label="Newspaper Commision" {...a11yProps(1)} />
+</Tabs> */}
       </Box>
       <CustomTabPanel value={value} index={0}>
       <Box
           component="form"
           noValidate
           sx={{
+           
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -167,12 +205,13 @@ function AddAgent() {
               autoFocus
               variant="standard"
               sx={{
-                my: 1,
+                mt: 12,
               }}
             />
 
             <TextField
               margin="normal"
+              required
               fullWidth
               id="Agency"
               label="Select Agency"
@@ -186,6 +225,7 @@ function AddAgent() {
             <TextField
               margin="normal"
               fullWidth
+              required
               id="areaName"
               label="Area Name"
               name="areaName"
@@ -195,20 +235,52 @@ function AddAgent() {
                 my: 1,
               }}
             />
+            {/* Address */}
+              <TextField
+              required
+        label="Street"
+        name="street"
+        value={address.street}
+        onChange={handleAddressChange}
+        fullWidth
+        margin="normal"
+        variant="standard"
+      />
+      <TextField
+      required
+        label="City"
+        name="city"
+        value={address.city}
+        onChange={handleAddressChange}
+        fullWidth
+        margin="normal"
+        variant="standard"
+      />
+      <TextField
+      required
+        label="State"
+        name="state"
+        value={address.state}
+        onChange={handleAddressChange}
+        fullWidth
+        margin="normal"
+        variant="standard"
+      />
+      <TextField
+        label="ZIP Code"
+        required
+        name="zip"
+        value={address.zip}
+        onChange={handleAddressChange}
+        fullWidth
+        margin="normal"
+        variant="standard"
+      />
+
+      {/* phone number */}
             <TextField
               margin="normal"
-              fullWidth
-              id="address"
-              label="Address"
-              name="address"
-              autoComplete="off"
-              variant="standard"
-              sx={{
-                my: 1,
-              }}
-            />
-            <TextField
-              margin="normal"
+              required
               fullWidth
               id="phone"
               label="Phone"
@@ -218,6 +290,10 @@ function AddAgent() {
               sx={{
                 my: 1,
               }}
+              value={phone}
+              onChange={handlePhoneChange}
+              error={phoneError !== ''}
+              helperText={phoneError}
             />
             {/* Date of Birth */}
             {/* <TextField
@@ -231,6 +307,7 @@ function AddAgent() {
            */}
             <TextField
               margin="normal"
+              required
               fullWidth
               id="place"
               label="Place"
@@ -249,6 +326,7 @@ function AddAgent() {
               width="100%"
             >
               <Typography
+               required
                 sx={{
                   fontSize: "17px",
                   fontWeight: "500",
@@ -267,6 +345,7 @@ function AddAgent() {
           </Box>
           <TextField
               margin="normal"
+              required
               fullWidth
               id="balance"
               label="Opening Balance"
@@ -283,14 +362,14 @@ function AddAgent() {
             }}>
            <Button sx={{
              width:'90px',
-           
-           }} variant="contained">Contained</Button> 
+              m:2
+           }} variant="contained">Submit</Button> 
            </Box>
             </Box>
             </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-      <TableContainer component={Paper}>
+      <TableContainer sx={{mt:12}} component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
