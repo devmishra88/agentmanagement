@@ -9,44 +9,47 @@ function AppHeader({ ...props }) {
 
   const { children } = props;
   return (
-    <AppBar position="static">
-      <Toolbar
-        sx={{
-          background: `#F7F7F8`,
-          color: `#000000`,
-        }}
-      >
-        <IconButton
-          onClick={() =>
-            dispatch(toggleMenu({ menuposition: `left`, menustatus: true }))
-          }
+    <>
+      <AppBar position="fixed">
+        <Toolbar
+          sx={{
+            background: `#F7F7F8`,
+            color: `#000000`,
+          }}
         >
-          <MenuIcon
-            className="material-icons"
-            sx={{
-              color: `#007AFF`,
-            }}
-          />
-        </IconButton>
-        {/* <img
+          <IconButton
+            onClick={() =>
+              dispatch(toggleMenu({ menuposition: `left`, menustatus: true }))
+            }
+          >
+            <MenuIcon
+              className="material-icons"
+              sx={{
+                color: `#007AFF`,
+              }}
+            />
+          </IconButton>
+          {/* <img
           src={newlogo}
           alt="App Logo"
           style={{
             width: `100px`,
           }}
         /> */}
-        <Typography
-          variant="h6"
-          sx={{
-            ml: 1,
-            fontSize: 18,
-            fontWeight: `bold`,
-          }}
-        >
-          {children}
-        </Typography>
-      </Toolbar>
-    </AppBar>
+          <Typography
+            variant="h6"
+            sx={{
+              ml: 1,
+              fontSize: 18,
+              fontWeight: `bold`,
+            }}
+          >
+            {children}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Toolbar sx={{ mt: 1 }} />
+    </>
   );
 }
 
