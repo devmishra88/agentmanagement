@@ -46,7 +46,7 @@ export default function SignIn() {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      const reqObject = { Mode: "AppLogin", logintype: 0, ...values };
+      const reqObject = { Mode: "AppLogin" /*, logintype: 0*/, ...values };
       const formData = objectToFormData(reqObject);
 
       mutation.mutate(formData, {
@@ -128,11 +128,11 @@ export default function SignIn() {
               textAlign: `center`,
             }}
           >
-            <Grid item xs>
+            {/* <Grid item xs>
               <Link href="/forgot" variant="body2">
                 Forgot password?
               </Link>
-            </Grid>
+            </Grid> */}
           </Grid>
         </form>
       </Box>
