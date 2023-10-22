@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoute";
 import { QueryClientProvider, QueryClient } from "react-query";
+import {Mainmenu} from "./components"
 import Login from "./screens/Login";
 import Forgot from "./screens/Forgot";
 import AddArea from "./screens/AddArea";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/addarea" element={<AddArea />} />
         </Route>
       </Routes>
+      <Mainmenu />
     </QueryClientProvider>
   );
 }
