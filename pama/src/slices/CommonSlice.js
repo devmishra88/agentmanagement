@@ -1,8 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    menuposition: `left`,
-    menustatus: false,
+  menuposition: `left`,
+  menustatus: false,
+  toaststatus: false,
+  toastmsg: ``,
+  loaderstatus:false,
 };
 
 export const CommonSlice = createSlice({
@@ -21,9 +24,21 @@ export const CommonSlice = createSlice({
         ...action.payload,
       };
     },
+    handleToastMsg: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
+    toggleLoader: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
   },
 });
 
-export const { togglePopup, toggleMenu } = CommonSlice.actions;
+export const { togglePopup, toggleMenu, handleToastMsg, toggleLoader } = CommonSlice.actions;
 
 export default CommonSlice.reducer;

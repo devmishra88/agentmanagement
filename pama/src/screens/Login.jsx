@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormikControl";
 import { request, objectToFormData } from "../utils/axios-utils";
-import { Copyright, Loader } from "../components";
+import { Copyright } from "../components";
 import { useMutation } from "react-query";
+import { useDispatch } from "react-redux";
+import { handleToastMsg, toggleLoader } from "../slices/CommonSlice";
+
 import {
   Avatar,
   Button,
@@ -14,23 +17,12 @@ import {
   Box,
   Typography,
   Container,
-  IconButton,
-  Snackbar,
 } from "@mui/material";
 
-import {LockOutlinedIcon, CloseIcon} from "../constants"
+import { LockOutlinedIcon } from "../constants";
 
 export default function SignIn() {
-  const [state, setState] = useState({
-    open: false,
-    msg: ``,
-    vertical: "bottom",
-    horizontal: "center",
-  });
-
-  const handleToastMsg = ({ ...newState }) => {
-    setState({ ...state, ...newState });
-  };
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
     phone: Yup.string()
@@ -50,19 +42,6 @@ export default function SignIn() {
     )
   );
 
-  const action = (
-    <>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={() => handleToastMsg({ open: false, msg: `` })}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </>
-  );
-
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -72,15 +51,11 @@ export default function SignIn() {
 
       mutation.mutate(formData, {
         onSuccess: (res) => {
-          /*console.log(res);*/
-
           const { data } = res;
           const { success, msg } = data;
 
           if (!success) {
-            handleToastMsg({ open: true, msg: msg });
-            /*console.log(data);
-            setErrMsg(msg);*/
+            dispatch(handleToastMsg({ toaststatus: true, toastmsg: msg }));
           }
         },
         onError: (res) => {
@@ -91,9 +66,10 @@ export default function SignIn() {
   });
 
   const { isLoading /*, isError, isSuccess, data: resdata*/ } = mutation;
-  const { vertical, horizontal, open, msg } = state;
 
-  /*console.log(resdata?.data)*/
+  useEffect(() => {
+    dispatch(toggleLoader({ loaderstatus: isLoading }));
+  }, [isLoading]);
 
   return (
     <Container component="main">
@@ -136,7 +112,6 @@ export default function SignIn() {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-
           <Button
             type="submit"
             fullWidth
@@ -162,18 +137,6 @@ export default function SignIn() {
         </form>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
-      <Loader open={isLoading} />
-      <Snackbar
-        autoHideDuration={6000}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        open={open}
-        onClose={() => handleToastMsg({ open: false, msg: `` })}
-        message={<Typography sx={{
-          fontSize:14
-        }}>{msg}</Typography>}
-        key={vertical + horizontal}
-        action={action}
-      />
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoute";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { Mainmenu } from "./components";
+import { Mainmenu, Apptoster, Loader } from "./components";
 import { Login, Forgot, Dashboard, AddArea } from "./screens";
 
 const queryClient = new QueryClient();
@@ -19,6 +19,8 @@ function App() {
         </Route>
       </Routes>
       <Mainmenu />
+      <Apptoster />
+      <Loader />
     </QueryClientProvider>
   );
 }

@@ -3,6 +3,7 @@ import Loader from "./Loader"
 import AppHeader from "./AppHeader"
 import AppFooter from "./AppFooter"
 import Mainmenu from "./Mainmenu"
+import Apptoster from "./Apptoster"
 
 export {
     Copyright,
@@ -10,4 +11,5 @@ export {
     AppHeader,
     AppFooter,
     Mainmenu,
+    Apptoster,
 }
