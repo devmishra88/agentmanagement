@@ -20,7 +20,7 @@ function App() {
   const { token } = useSelector((state) => state.auth);
   useEffect(() => {
     if (token?.accesstoken) {
-      navigate(`/dashboard`);
+      navigate(`/dashboard`, { replace: true });
     }
   }, [token]);
   return (
