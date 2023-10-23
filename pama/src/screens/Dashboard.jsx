@@ -1,18 +1,16 @@
 import React from "react";
 import { AppHeader } from "../components";
 
-import { Typography, Container, Grid, Card, CardContent } from "@mui/material";
-
 import {
-  Diversity3Icon,
-  AccountCircleIcon,
-  NewspaperIcon,
-  MapsHomeWorkIcon,
-  InventoryIcon,
-  BarChartIcon,
-  ReceiptLongIcon,
-  ReportIcon,
-} from "../constants";
+  Typography,
+  Container,
+  Grid,
+  Card,
+  CardContent,
+  IconButton,
+} from "@mui/material";
+
+import { moduleitems } from "../constants";
 
 const Dashboard = () => {
   return (
@@ -20,198 +18,34 @@ const Dashboard = () => {
       <AppHeader>Dashboard</AppHeader>
       <Container maxWidth="lg">
         <Grid container mt={1} spacing={1}>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <AccountCircleIcon
+          {moduleitems.map((item, index) => (
+            <Grid item xs={6} key={index}>
+              <Card>
+                <CardContent
                   sx={{
-                    color: `#b4c100`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
+                    textAlign: `center`,
                   }}
                 >
-                  Agency
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <Diversity3Icon
-                  sx={{
-                    color: `#d32d41`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Agent
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <NewspaperIcon
-                  sx={{
-                    color: `#4cb5f6`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Newspaper
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <MapsHomeWorkIcon
-                  sx={{
-                    color: `#b307f7`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Area
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <InventoryIcon
-                  sx={{
-                    color: `#b4c100`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Purchase
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <BarChartIcon
-                  sx={{
-                    color: `#d32d41`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Sales
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <ReceiptLongIcon
-                  sx={{
-                    color: `#b307f7`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Billing
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent
-                sx={{
-                  textAlign: `center`,
-                }}
-              >
-                <ReportIcon
-                  sx={{
-                    color: `#4cb5f6`,
-                  }}
-                />
-                <br />
-                <Typography
-                  variant="div"
-                  sx={{
-                    color: `#007aff`,
-                  }}
-                >
-                  Report
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+                  <IconButton
+                    sx={{
+                      color: item.iconcolor,
+                    }}
+                  >
+                    {item.iconname}
+                  </IconButton>
+                  <br />
+                  <Typography
+                    variant="div"
+                    sx={{
+                      color: item.titlecolor,
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </>

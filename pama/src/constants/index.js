@@ -1,34 +1,60 @@
 // import applogo from "../assets/images/logo.png";
 // import newlogo from "../assets/images/newlogo.png";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import CloseIcon from "@mui/icons-material/Close";
-import SaveIcon from "@mui/icons-material/Save";
-import MenuIcon from "@mui/icons-material/Menu";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import ReportIcon from "@mui/icons-material/Report";
+import {
+  LockOutlined,
+  Close,
+  Save,
+  Menu,
+  Inbox,
+  Mail,
+  Newspaper,
+  MapsHomeWork,
+  Inventory,
+  BarChart,
+  ReceiptLong,
+  Report,
+  Edit,
+  Person,
+  Dashboard,
+  People,
+  CreditCard,
+  Description,
+  ExitToApp,
+  Settings,
+  ManageAccounts,
+  LockReset,
+  Diversity3,
+  AccountCircle,
+} from "@mui/icons-material";
+
+import { moduleitems, configuration } from "./moduleitems";
 
 export {
-  LockOutlinedIcon,
-  CloseIcon,
-  SaveIcon,
-  MenuIcon,
-  InboxIcon,
-  MailIcon,
-  Diversity3Icon,
-  AccountCircleIcon,
-  NewspaperIcon,
-  MapsHomeWorkIcon,
-  InventoryIcon,
-  BarChartIcon,
-  ReceiptLongIcon,
-  ReportIcon,
+  LockOutlined as LockOutlinedIcon,
+  Close as CloseIcon,
+  Save as SaveIcon,
+  Menu as MenuIcon,
+  Inbox as InboxIcon,
+  Mail as MailIcon,
+  Newspaper as NewspaperIcon,
+  MapsHomeWork as MapsHomeWorkIcon,
+  Inventory as InventoryIcon,
+  BarChart as BarChartIcon,
+  ReceiptLong as ReceiptLongIcon,
+  Report as ReportIcon,
+  Edit as EditIcon,
+  Person as PersonIcon,
+  Dashboard as DashboardIcon,
+  People as PeopleIcon,
+  CreditCard as CreditCardIcon,
+  Description as DescriptionIcon,
+  ExitToApp as ExitToAppIcon,
+  Settings as SettingsIcon,
+  ManageAccounts as ManageAccountsIcon,
+  LockReset as LockResetIcon,
+  Diversity3 as Diversity3Icon,
+  AccountCircle as AccountCircleIcon,
+  moduleitems,
+  configuration,
 };
