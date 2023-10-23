@@ -77,11 +77,11 @@ function createData(name, commision) {
   return { name, commision};
 }
 const rows = [
-  createData('Danik Jagran','1%'),
-  createData('Amar Ujalah', '2%'),
-  createData('Hindustan', "1%"),
-  createData('The Hindu',"2%"),
-  createData('The Times of India',"1%"),
+  createData('Danik Jagran',<TextField value={'1%'} variant="standard" sx={{width:'50%'}} />),
+  createData('Amar Ujalah', <TextField value={'1%'} variant="standard" sx={{width:'50%'}} />),
+  createData('Hindustan', <TextField value={'1%'} variant="standard" sx={{width:'50%'}} />),
+  createData('The Hindu',<TextField value={'1%'} variant="standard" sx={{width:'50%'}} />),
+  createData('The Times of India',<TextField value={'1%'} variant="standard" sx={{width:'50%'}} />),
 ];
 function AddAgent() {
   const [value, setValue] = React.useState(0);
@@ -164,16 +164,13 @@ function AddAgent() {
         </AppBar>
         <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider',  position:'fixed', top:'55px', zIndex:"1000",bgcolor:"#ffffff",width:"100%",display:"flex",justifyContent:"space-between" }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Profile" {...a11yProps(0)} />
-          <Tab label="Newspaper Commision" {...a11yProps(1)} />
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ width:'100%'}}>
+          <Tab label="Profile" {...a11yProps(0)} sx={{width:'47%'}} />
+          <Tab label="Newspaper Commision" {...a11yProps(1)} sx={{width:'50%', whiteSpace:'nowrap'}}/>
          
         </Tabs>
 
-{/* <Tabs value={value} onChange={(_, newValue) => setValue(newValue)} aria-label="basic tabs example">
-  <Tab label="Profile" {...a11yProps(0)} />
-  <Tab label="Newspaper Commision" {...a11yProps(1)} />
-</Tabs> */}
+
       </Box>
       <CustomTabPanel value={value} index={0}>
       <Box
@@ -353,18 +350,40 @@ function AddAgent() {
               autoComplete="off"
               variant="standard"
               sx={{
-                my: 1,
+                mb: 10,
               }}
             />
-            <Box sx={{
-              display:'flex',
-              justifyContent:'center'
-            }}>
-           <Button sx={{
-             width:'90px',
-              m:2
-           }} variant="contained">Submit</Button> 
-           </Box>
+             <AppBar
+              position="fixed"
+              sx={{ top: "auto", bottom: 0, background: `#F7F7F8` }}
+            >
+              <Toolbar>
+                <Box sx={{ flexGrow: 1 }} />
+                <IconButton color="inherit">
+                  {/* <SearchIcon /> */}
+                </IconButton>
+                <IconButton color="inherit">
+                  {/* <MoreIcon /> */}
+                </IconButton>
+
+                <Button
+                  color="primary"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "7px",
+                    width: "120px",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                  }}
+                  variant="contained"
+                >
+                  <SaveIcon />
+                  Submit
+                </Button>
+
+              </Toolbar>
+            </AppBar>
             </Box>
             </Box>
       </CustomTabPanel>
