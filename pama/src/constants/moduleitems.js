@@ -7,7 +7,6 @@ import {
   BarChartIcon,
   ReceiptLongIcon,
   ReportIcon,
-  DashboardIcon,
   SettingsIcon,
   ManageAccountsIcon,
   LockResetIcon,
