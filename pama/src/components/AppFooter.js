@@ -11,7 +11,7 @@ import {
 import {SaveIcon} from "../constants"
 
 function AppFooter({ ...props }) {
-  const { children } = props;
+  const { children, ...rest } = props;
   return (
     <AppBar
       position="fixed"
@@ -31,6 +31,7 @@ function AppFooter({ ...props }) {
             cursor: "pointer",
           }}
           variant="contained"
+          {...rest}
         >
           <SaveIcon />
           SAVE

@@ -6,6 +6,7 @@ import Select from "./Select";
 import RadioButton from "./RadioButton";
 import CheckboxGroup from "./CheckboxGroup";
 import DatePicker from "./DatePicker";
+import Toggle from "./Toggle";
 
 function FormikControl(props) {
   const { control, ...rest } = props;
@@ -25,6 +26,8 @@ function FormikControl(props) {
       return <CheckboxGroup {...rest} />;
     case "date":
       return <DatePicker {...rest} />;
+    case "toggle":
+      return <Toggle {...rest} />;
     default:
       return null;
   }

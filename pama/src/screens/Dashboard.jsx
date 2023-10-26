@@ -1,5 +1,6 @@
 import React from "react";
 import { AppHeader } from "../components";
+import useSwitchRoute from "../hooks/useSwitchRoute";
 
 import {
   Typography,
@@ -13,6 +14,8 @@ import {
 import { moduleitems } from "../constants";
 
 const Dashboard = () => {
+  const switchRoute = useSwitchRoute();
+
   return (
     <>
       <AppHeader>Dashboard</AppHeader>
@@ -30,18 +33,26 @@ const Dashboard = () => {
                     sx={{
                       color: item.iconcolor,
                     }}
+                    onClick={() => switchRoute(item.link, false)}
                   >
                     {item.iconname}
                   </IconButton>
                   <br />
-                  <Typography
-                    variant="div"
+                  <IconButton
                     sx={{
                       color: item.titlecolor,
                     }}
+                    onClick={() => switchRoute(item.link, false)}
                   >
-                    {item.title}
-                  </Typography>
+                    <Typography
+                      variant="div"
+                      sx={{
+                        fontSize: 16,
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </IconButton>
                 </CardContent>
               </Card>
             </Grid>
