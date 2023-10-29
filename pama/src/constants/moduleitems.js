@@ -12,11 +12,11 @@ import {
   LockResetIcon,
 } from "./index";
 
-import { Dashboard, AddArea, ManageTemplate, ManageArea } from "../screens";
+import { Dashboard, AreaForm, ManageTemplate, ManageArea } from "../screens";
 
 export const screens = [
     { screen: <Dashboard />, navlink: `dashboard` },
-    { screen: <AddArea />, navlink: `addarea` },
+    { screen: <AreaForm />, navlink: `area` },
     { screen: <ManageTemplate />, navlink: `managetemplate` },
   ];
 

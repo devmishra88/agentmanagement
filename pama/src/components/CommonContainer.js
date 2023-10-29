@@ -1,17 +1,17 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardHeader, CardActionArea, CardActions } from "@mui/material";
 
-export default function Datacontainer({...props}) {
+export default function CommonContainer({ ...props }) {
+  const { addeddate, name, id } = props;
 
   return (
-    <Card sx={{ maxWidth: `100%`, mb: 1.5 }}>
+    <Card sx={{ maxWidth: `100%`,width:`100%`, mb: 1.5 }}>
       <CardActionArea>
         <CardHeader
-          title={`Test Item`}
+          title={`${addeddate}`}
           sx={{
             background: `#1c4e80`,
             color: `#ffffff`,
@@ -23,21 +23,20 @@ export default function Datacontainer({...props}) {
           }}
         >
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {name}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
         sx={{
-          background: `#DADADA`,
+          background: `#DADADA`,display:`flex`,justifyContent:`space-between`,
         }}
       >
         <Button size="small" color="primary">
-          Share
+          Edit
+        </Button>
+        <Button size="small" color="primary">
+          Delete
         </Button>
       </CardActions>
     </Card>

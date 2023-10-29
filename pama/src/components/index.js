@@ -7,6 +7,7 @@ import Apptoster from "./Apptoster"
 import Datacontainer from "./Datacontainer"
 import Logoutdrawer from "./Logoutdrawer"
 import AddFab from "./AddFab"
+import CommonContainer from "./CommonContainer"
 
 export {
     Copyright,
@@ -16,6 +17,7 @@ export {
     Mainmenu,
     Apptoster,
     Datacontainer,
+    CommonContainer,
     Logoutdrawer,
     AddFab,
 }
