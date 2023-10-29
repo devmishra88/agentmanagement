@@ -2,9 +2,12 @@ import React from "react";
 
 import { Container, Grid } from "@mui/material";
 
-import { AppHeader, Datacontainer } from "../components";
+import { AppHeader, Datacontainer, AddFab } from "../components";
+import useSwitchRoute from "../hooks/useSwitchRoute";
 
 function ManageArea() {
+  const switchRoute = useSwitchRoute();
+
   const datalist = [
     `data1`,
     `data2`,
@@ -25,6 +28,7 @@ function ManageArea() {
           ))}
         </Grid>
       </Container>
+      <AddFab onClick={() => switchRoute(`/addarea`, false)}>Add Area</AddFab>
     </>
   );
 }

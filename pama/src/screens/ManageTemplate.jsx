@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Grid, Box } from "@mui/material";
 
-import { AppHeader, Datacontainer } from "../components";
+import { AppHeader, Datacontainer, AddFab } from "../components";
 
 function ManageTemplate() {
   const datalist = [
@@ -25,6 +25,7 @@ function ManageTemplate() {
           ))}
         </Box>
       </Container>
+      <AddFab>Add</AddFab>
     </>
   );
 }

@@ -26,6 +26,7 @@ import {
   LockReset,
   Diversity3,
   AccountCircle,
+  Add,
 } from "@mui/icons-material";
 
 import { moduleitems, configuration } from "./moduleitems";
@@ -55,6 +56,7 @@ export {
   LockReset as LockResetIcon,
   Diversity3 as Diversity3Icon,
   AccountCircle as AccountCircleIcon,
+  Add as AddIcon,
   moduleitems,
   configuration,
 };
