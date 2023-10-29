@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 
 import { AppHeader, Datacontainer } from "../components";
 
@@ -19,11 +19,11 @@ function ManageTemplate() {
     <>
       <AppHeader>Manage Page Template</AppHeader>
       <Container maxWidth="lg">
-        <Grid container mt={1} spacing={1}>
+        <Box mt={1} spacing={1}>
           {datalist.map((data) => (
             <Datacontainer key={data} />
           ))}
-        </Grid>
+        </Box>
       </Container>
     </>
   );

@@ -70,7 +70,7 @@ function AddArea() {
     <>
       <AppHeader>Add Area</AppHeader>
       <Container maxWidth="lg">
-        <Grid container mt={1} spacing={1}>
+        <Box mt={1} spacing={1}>
           <Box>
             <form onSubmit={formik.handleSubmit} noValidate>
               <FormikControl
@@ -114,7 +114,7 @@ function AddArea() {
               ></Grid>
             </form>
           </Box>
-        </Grid>
+        </Box>
       </Container>
       <AppFooter onClick={formik.handleSubmit} />
     </>
