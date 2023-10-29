@@ -9,6 +9,8 @@ import {
 } from "../constants";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleMenu } from "../slices/CommonSlice";
+import { confirmLogout, logout } from "../slices/authSlice";
+import useSwitchRoute from "../hooks/useSwitchRoute";
 
 import {
   Grid,
@@ -27,17 +29,10 @@ import {
 function Mainmenu() {
   const dispatch = useDispatch();
   const { menuposition, menustatus } = useSelector((state) => state.common);
+  const switchRoute = useSwitchRoute();
 
   const list = () => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={() =>
-        dispatch(
-          dispatch(toggleMenu({ menuposition: `left`, menustatus: true }))
-        )
-      }
-    >
+    <Box sx={{ width: 250 }} role="presentation">
       <Grid container>
         <Grid item xs={12}>
           <Paper
@@ -52,6 +47,9 @@ function Mainmenu() {
           >
             <IconButton
               sx={{ position: "absolute", top: 5, right: 5, color: `#ffffff` }}
+              onClick={() => {
+                switchRoute(`/profile`, false);
+              }}
             >
               <EditIcon />
             </IconButton>
@@ -62,7 +60,11 @@ function Mainmenu() {
         </Grid>
         <Grid item xs={12}>
           <List>
-            <ListItem>
+            <ListItem
+              onClick={() => {
+                switchRoute(`/dashboard`, false);
+              }}
+            >
               <ListItemIcon
                 sx={{
                   color: `#488a9a`,
@@ -75,7 +77,11 @@ function Mainmenu() {
             <Divider />
             {moduleitems.map((item, index) => (
               <Fragment key={index}>
-                <ListItem>
+                <ListItem
+                  onClick={() => {
+                    switchRoute(`${item.link}`, false);
+                  }}
+                >
                   <ListItemIcon
                     sx={{
                       color: item.iconcolor,
@@ -95,7 +101,11 @@ function Mainmenu() {
             ))}
             {configuration.map((configitem, configindex) => (
               <Fragment key={configindex}>
-                <ListItem>
+                <ListItem
+                  onClick={() => {
+                    switchRoute(`${configitem.link}`, false);
+                  }}
+                >
                   <ListItemIcon
                     sx={{
                       color: configitem.iconcolor,
@@ -113,7 +123,17 @@ function Mainmenu() {
                 <Divider />
               </Fragment>
             ))}
-            <ListItem>
+            <ListItem
+              onClick={() => {
+                dispatch(toggleMenu({ menuposition: `left`, menustatus: false }))
+                dispatch(
+                  confirmLogout({
+                    logoutpopupposition: `bottom`,
+                    logoutpopupstatus: true,
+                  })
+                );
+              }}
+            >
               <ListItemIcon
                 sx={{
                   color: `#d32d41`,
@@ -135,9 +155,7 @@ function Mainmenu() {
         anchor={menuposition}
         open={menustatus}
         onClose={() =>
-          dispatch(
-            dispatch(toggleMenu({ menuposition: `left`, menustatus: false }))
-          )
+          dispatch(toggleMenu({ menuposition: `left`, menustatus: false }))
         }
       >
         {list()}

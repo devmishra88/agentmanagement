@@ -12,13 +12,22 @@ import {
   LockResetIcon,
 } from "./index";
 
+import { Dashboard, AddArea, ManageTemplate, ManageArea } from "../screens";
+
+export const screens = [
+    { screen: <Dashboard />, navlink: `dashboard` },
+    { screen: <AddArea />, navlink: `addarea` },
+    { screen: <ManageTemplate />, navlink: `managetemplate` },
+  ];
+
 export const moduleitems = [
   {
     iconname: <AccountCircleIcon />,
     title: `Agency`,
-    link: `/agency`,
+    link: `/agencies`,
     iconcolor: `#b4c100`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <Diversity3Icon />,
@@ -26,6 +35,7 @@ export const moduleitems = [
     link: `/agents`,
     iconcolor: `#d32d41`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <NewspaperIcon />,
@@ -33,20 +43,23 @@ export const moduleitems = [
     link: `/newspapers`,
     iconcolor: `#4cb5f6`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <MapsHomeWorkIcon />,
     title: `Area`,
-    link: `/managearea`,
+    link: `/areas`,
     iconcolor: `#b307f7`,
     titlecolor: `#007aff`,
+    screen: <ManageArea />,
   },
   {
     iconname: <InventoryIcon />,
     title: `Purchase`,
-    link: `/purchase`,
+    link: `/purchases`,
     iconcolor: `#b4c100`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <BarChartIcon />,
@@ -54,13 +67,15 @@ export const moduleitems = [
     link: `/sales`,
     iconcolor: `#d32d41`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <ReceiptLongIcon />,
     title: `Billing`,
-    link: `/billing`,
+    link: `/billings`,
     iconcolor: `#007aff`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <ReportIcon />,
@@ -68,6 +83,7 @@ export const moduleitems = [
     link: `/reports`,
     iconcolor: `#4cb5f6`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
 ];
 
@@ -78,6 +94,7 @@ export const configuration = [
     link: `/profile`,
     iconcolor: `#d32d41`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <LockResetIcon />,
@@ -85,6 +102,7 @@ export const configuration = [
     link: `/changepassword`,
     iconcolor: `#2196f3`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
   {
     iconname: <SettingsIcon />,
@@ -92,5 +110,6 @@ export const configuration = [
     link: `/settings`,
     iconcolor: `#7e909a`,
     titlecolor: `#007aff`,
+    screen: <ManageTemplate />,
   },
 ];
