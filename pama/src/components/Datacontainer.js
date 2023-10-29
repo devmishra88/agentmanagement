@@ -7,7 +7,7 @@ import { Button, CardHeader, CardActionArea, CardActions } from "@mui/material";
 
 export default function Datacontainer() {
   return (
-    <Card sx={{ maxWidth: 345, mb: 1.5 }}>
+    <Card sx={{ maxWidth: `100%`, mb: 1.5 }}>
       <CardActionArea>
         <CardHeader
           title={`Test Item`}
