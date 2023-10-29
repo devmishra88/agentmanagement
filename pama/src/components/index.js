@@ -5,6 +5,7 @@ import AppFooter from "./AppFooter"
 import Mainmenu from "./Mainmenu"
 import Apptoster from "./Apptoster"
 import Datacontainer from "./Datacontainer"
+import Logoutdrawer from "./Logoutdrawer"
 
 export {
     Copyright,
@@ -14,4 +15,5 @@ export {
     Mainmenu,
     Apptoster,
     Datacontainer,
+    Logoutdrawer,
 }
