@@ -1,14 +1,22 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { Button, CardHeader, CardActionArea, CardActions } from "@mui/material";
+import useSwitchRoute from "../hooks/useSwitchRoute";
 
-export default function CommonContainer({ ...props }) {
+import {
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  CardHeader,
+  CardActionArea,
+  CardActions,
+} from "@mui/material";
+
+export default function SingleAreaCard({ ...props }) {
+  const switchRoute = useSwitchRoute();
   const { addeddate, name, id } = props;
 
   return (
-    <Card sx={{ maxWidth: `100%`,width:`100%`, mb: 1.5 }}>
+    <Card sx={{ maxWidth: `100%`, width: `100%`, mb: 1.5 }}>
       <CardActionArea>
         <CardHeader
           title={`${addeddate}`}
@@ -29,10 +37,16 @@ export default function CommonContainer({ ...props }) {
       </CardActionArea>
       <CardActions
         sx={{
-          background: `#DADADA`,display:`flex`,justifyContent:`space-between`,
+          background: `#DADADA`,
+          display: `flex`,
+          justifyContent: `space-between`,
         }}
       >
-        <Button size="small" color="primary">
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => switchRoute(`/area?mode=edit&id=${id}`, false)}
+        >
           Edit
         </Button>
         <Button size="small" color="primary">

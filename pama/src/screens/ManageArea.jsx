@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { toggleLoader } from "../slices/CommonSlice";
-import { AppHeader, CommonContainer, AddFab } from "../components";
+import { AppHeader, SingleAreaCard, AddFab } from "../components";
 import useSwitchRoute from "../hooks/useSwitchRoute";
 import { useAreasData } from "../hooks/useAreaData";
 
@@ -45,7 +45,7 @@ function ManageArea() {
             </Typography>
           ) : null}
           {data?.data?.recordlist?.map((area, index) => {
-            return <CommonContainer key={area.id} {...area} />;
+            return <SingleAreaCard key={area.id} {...area} />;
           })}
         </Grid>
       </Container>
