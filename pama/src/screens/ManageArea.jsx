@@ -11,17 +11,15 @@ function ManageArea() {
   const switchRoute = useSwitchRoute();
 
   const onSuccess = (data) => {
-    console.log(`Perform side effect after data fetching`, data);
+    // console.log(`Perform side effect after data fetching`, data);
   };
 
   const onError = (error) => {
-    console.log(`Perform side effect after encountering error`, error);
+    // console.log(`Perform side effect after encountering error`, error);
   };
 
-  const { isLoading, isFetching, data, isError, error, refetch } = useAreasData(
-    onSuccess,
-    onError
-  );
+  const { isLoading, isFetching, data, isError, error /*, refetch*/ } =
+    useAreasData(onSuccess, onError);
 
   dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
 
@@ -39,7 +37,8 @@ function ManageArea() {
               sx={{
                 display: `block`,
                 width: `100%`,
-                textAlign: `center`,fontWeight:`bold`,
+                textAlign: `center`,
+                fontWeight: `bold`,
               }}
             >
               Total Area : {data?.data?.recordlist?.length}
