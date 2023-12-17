@@ -72,6 +72,8 @@ function AreaForm() {
           if (success) {
             if (queryobject.mode === `edit`) {
               switchRoute(`/areas`, true);
+            }else{
+              formik.resetForm();
             }
           }
         },
