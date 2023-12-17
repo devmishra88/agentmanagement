@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { handleToastMsg, toggleLoader } from "../slices/CommonSlice";
 import useQueryParams from "../hooks/useQueryParams";
 import useSwitchRoute from "../hooks/useSwitchRoute";
+import { useSingleAreaData } from "../hooks/useAreaData";
 
 import { Grid, Box, Container } from "@mui/material";
 
@@ -17,6 +18,20 @@ function AreaForm() {
   const queryParams = useQueryParams();
   const switchRoute = useSwitchRoute();
   const dispatch = useDispatch();
+
+  const excludedKeys = [];
+  const getVars = queryParams(excludedKeys);
+
+  const { querystring, queryobject } = getVars;
+
+  const editData = {}
+
+  let mode = "Add";
+  if (queryobject.mode === `edit`) {
+    mode = "Edit";
+  }
+
+  const { isLoading: isEditLoading, data, dataUpdatedAt, isError, error } = useSingleAreaData(queryobject.id);
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is Required"),
@@ -38,18 +53,13 @@ function AreaForm() {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      const excludedKeys = [];
-      const getVars = queryParams(excludedKeys);
-
-      const { querystring, queryobject } = getVars;
-
-      let mode = "AddArea";
-      if (queryobject.mode === `edit`) {
-        mode = "EditArea1";
-      }
-
       const { status } = values;
-      const reqObject = { Mode: mode, status: Number(status), ...values };
+      const reqObject = {
+        Mode: `${mode}Area`,
+        status: Number(status),
+        ...values,
+        recordid: queryobject.id ?? '',
+      };
       const formData = objectToFormData(reqObject);
 
       mutation.mutate(formData, {
@@ -59,10 +69,9 @@ function AreaForm() {
 
           dispatch(handleToastMsg({ toaststatus: true, toastmsg: msg }));
 
-          if (!success) {
-            // dispatch(handleToastMsg({ toaststatus: true, toastmsg: msg }));
+          if (success) {
             if (queryobject.mode === `edit`) {
-              switchRoute(`/areas`, true)
+              switchRoute(`/areas`, true);
             }
           }
         },
@@ -73,15 +82,32 @@ function AreaForm() {
     },
   });
 
-  const { isLoading /*, isError, isSuccess, data: resdata*/ } = mutation;
+  const { isLoading, /*isError,*/ isSuccess, data: resdata } = mutation;
 
   useEffect(() => {
     dispatch(toggleLoader({ loaderstatus: isLoading }));
   }, [isLoading]);
 
+  useEffect(() => {
+    if (data?.data?.success) {
+
+      const areaDetail = data.data.areadetail;
+
+      if (areaDetail) {
+        const { name, remark, status } = areaDetail;
+  
+        formik.setValues({
+          name: name || "",
+          remarks: remark || "",
+          status: Number(status) === 1,
+        });
+      }
+    }
+  }, [data?.data?.success, dataUpdatedAt, formik.setValues]);
+
   return (
     <>
-      <AppHeader>Add Area</AppHeader>
+      <AppHeader>{mode} Area</AppHeader>
       <Container maxWidth="lg">
         <Box mt={1} spacing={1}>
           <Box>

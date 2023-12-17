@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { toggleLoader } from "../slices/CommonSlice";
@@ -18,13 +18,16 @@ function ManageArea() {
     // console.log(`Perform side effect after encountering error`, error);
   };
 
-  const { isLoading, isFetching, data, isError, error /*, refetch*/ } =
-    useAreasData(onSuccess, onError);
+  const { isLoading, isFetching, data, isError, error /*, refetch*/ } = useAreasData(onSuccess, onError);
 
-  dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
+  useEffect(()=>{
+    
+    dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
+
+  },[isLoading, isFetching])
 
   if (isError) {
-    return <h2>{error.message}</h2>;
+    return <h2>{error?.message}</h2>;
   }
 
   return (
