@@ -13,7 +13,7 @@ import {
 
 export default function SingleAreaCard({ ...props }) {
   const switchRoute = useSwitchRoute();
-  const { addeddate, name, id } = props;
+  const { addeddate, name, id, deleteCallback } = props;
 
   return (
     <Card sx={{ maxWidth: `100%`, width: `100%`, mb: 1.5 }}>
@@ -49,7 +49,7 @@ export default function SingleAreaCard({ ...props }) {
         >
           Edit
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={deleteCallback}>
           Delete
         </Button>
       </CardActions>

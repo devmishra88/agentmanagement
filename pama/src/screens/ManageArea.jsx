@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Container, Grid, Typography } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { toggleLoader } from "../slices/CommonSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleLoader, confirmDelete } from "../slices/CommonSlice";
 import { AppHeader, SingleAreaCard, AddFab } from "../components";
 import useSwitchRoute from "../hooks/useSwitchRoute";
 import { useAreasData } from "../hooks/useAreaData";
 
 function ManageArea() {
   const dispatch = useDispatch();
+  const { menuposition, menustatus, candelete, deletionrecordid } = useSelector((state) => state.common);
   const switchRoute = useSwitchRoute();
 
   const onSuccess = (data) => {
@@ -18,13 +19,20 @@ function ManageArea() {
     // console.log(`Perform side effect after encountering error`, error);
   };
 
-  const { isLoading, isFetching, data, isError, error /*, refetch*/ } = useAreasData(onSuccess, onError);
+  const { isLoading, isFetching, data, isError, error, deleteArea /*, refetch*/ } = useAreasData(onSuccess, onError);
 
-  useEffect(()=>{
-    
+  useEffect(() => {
     dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
+  }, [isLoading, isFetching]);
 
-  },[isLoading, isFetching])
+  useEffect(() => {
+    if(candelete)
+    {
+      dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
+      deleteArea(deletionrecordid)
+    }
+    // dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
+  }, [deletionrecordid, candelete]);
 
   if (isError) {
     return <h2>{error?.message}</h2>;
@@ -48,7 +56,22 @@ function ManageArea() {
             </Typography>
           ) : null}
           {data?.data?.recordlist?.map((area, index) => {
-            return <SingleAreaCard key={area.id} {...area} />;
+            return (
+              <SingleAreaCard
+                key={area.id}
+                {...area}
+                deleteCallback={() =>
+                  dispatch(
+                    confirmDelete({
+                      deletepopupstatus: true,
+                      deletepopupposition: "bottom",
+                      candelete:false,
+                      deletionrecordid:area.id,
+                    })
+                  )
+                }
+              />
+            );
           })}
         </Grid>
       </Container>

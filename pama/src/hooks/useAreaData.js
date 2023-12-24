@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useQuery, useMutation, useQueryClient, queryCache } from "react-query";
 import { secureRequest, objectToFormData } from "../utils/axios-utils";
 
 const addEditArea = (areadata) => {
@@ -18,25 +18,29 @@ const fetchSingleArea = ({ queryKey }) => {
   return secureRequest({ url: `/area.php`, method: `POST`, data: formData });
 };
 
+export const deleteAreaById = async (areaId) => {
+  try {
+    const response = await secureRequest({
+      url: `/area.php`,
+      method: 'DELETE',
+      data: { recordid:areaId },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting area:', error);
+    throw error;
+  }
+};
+
 export const useAddAreaData = () => {
   const queryClient = useQueryClient();
 
   return useMutation(addEditArea, {
-    // onSuccess:(data)=>{
-    //   // queryClient.invalidateQueries(`areas`)
-    //   queryClient.setQueriesData(`areas`,(oldQueryData)=>{
-    //     return{
-    //       ...oldQueryData,
-    //       data:[...oldQueryData.data, data.data]
-    //     }
-    //   })
-    // }
-    /*---------------suppose data saving will not have any error------------*/
-    /*---------------Optimistic Updates------------*/
     onMutate: async (newArea) => {
       await queryClient.cancelQueries(`areas`);
       const previousAreaData = queryClient.getQueryData(`areas`);
-      /*----------append new data-------*/
+
       queryClient.setQueriesData(`areas`, (oldQueryData) => {
         return {
           ...oldQueryData,
@@ -46,65 +50,67 @@ export const useAddAreaData = () => {
           ],
         };
       });
-      /*----------return previous catched data-------*/
       return {
         previousAreaData,
       };
     },
     onError: (_error, _area, context) => {
-      /*----------set previous data if any error from api-------*/
       queryClient.setQueryData(`areas`, context.previousAreaData);
     },
     onSettled: () => {
-      /*----------sync data from the db-------*/
       queryClient.invalidateQueries(`areas`);
     },
   });
 };
 
 export const useAreasData = (onSuccess, onError) => {
-  return useQuery(`areas`, fetchAreas, {
+
+  const queryClient = useQueryClient();
+
+  const { data, ...rest } = useQuery(`areas`, fetchAreas, {
     onSuccess,
     onError,
   });
-};
 
-export const useSingleAreaDataCachedOrg = (areaId) => {
-  const queryClient = useQueryClient();
+  const mutateDeleteArea = useMutation(
+    (id) => deleteAreaById(id),
+    {
+      onSuccess: (response, id) => {
 
-  return useQuery(["area", areaId], fetchSingleArea, {
-    initialData: () => {
-      const singlearea = queryClient
-        .getQueryData(`area`)
-        ?.singlearea?.find((area) => parseInt(area.id) === parseInt(areaId));
+        const tempdata = data?.data
 
-      if (singlearea) {
-        return {
-          data: singlearea,
-        };
-      } else {
-        return undefined;
-      }
-    },
-  });
+        queryClient.invalidateQueries('areas', { refetchActive: true });
+
+        const updatedAreas = data? tempdata?.recordlist.filter(area => area.id !== id) : [];
+
+        queryClient.setQueryData('areas', {
+          success: true,
+          msg: 'Area listed successfully.',
+          recordlist: updatedAreas,
+          totalrecord: updatedAreas.length,
+        });
+      },
+    }
+  );
+
+  const deleteArea = (id) => {
+    mutateDeleteArea.mutate(id);
+  };
+
+  return { data, deleteArea, ...rest };
 };
 
 export const useSingleAreaData = (areaId) => {
   const queryClient = useQueryClient();
 
   return useQuery(["area", areaId], fetchSingleArea, {
-    initialData: async () => {
-      // Fetch the latest data from the API
-      await queryClient.prefetchQuery(["area", areaId], fetchSingleArea);
+    initialData: () => {
+      queryClient.prefetchQuery(["area", areaId], fetchSingleArea);
 
-      const singlearea = queryClient
-        .getQueryData(["area", areaId])
-        ?.singlearea?.find((area) => parseInt(area.id) === parseInt(areaId));
+      const prefetchedData = queryClient.getQueryData(["area", areaId]);
 
-      if (singlearea) {
-        return {
-          data: singlearea,
-        };
+      if (prefetchedData?.data?.success) {
+        return prefetchedData;
       } else {
         return undefined;
       }

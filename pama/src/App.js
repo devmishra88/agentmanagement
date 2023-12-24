@@ -1,18 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoute";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleLoader } from "./slices/CommonSlice";
-import { Mainmenu, Apptoster, Loader, Logoutdrawer } from "./components";
+import {
+  Mainmenu,
+  Apptoster,
+  Loader,
+  Logoutdrawer,
+  Deleteconfirm,
+} from "./components";
 
 import { moduleitems, configuration } from "./constants";
 
-import {
-  Dashboard,
-  publicscreens,
-  secureaddscreens,
-} from "./screens";
+import { /*Dashboard,*/ publicscreens, secureaddscreens } from "./screens";
+const Dashboard = lazy(() => import("./screens/Dashboard"));
 
 const queryClient = new QueryClient();
 
@@ -40,6 +43,9 @@ function App() {
         ))}
 
         <Route element={<PrivateRoutes />}>
+          {/* <Suspense fallback={<div>Loading...</div>}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Suspense> */}
           <Route path="/dashboard" element={<Dashboard />} />
           {secureaddscreens.map((secureitem, secureaddindex) => (
             <Route
@@ -68,6 +74,7 @@ function App() {
       <Apptoster />
       <Loader />
       <Logoutdrawer />
+      <Deleteconfirm />
     </QueryClientProvider>
   );
 }

@@ -24,14 +24,20 @@ function AreaForm() {
 
   const { querystring, queryobject } = getVars;
 
-  const editData = {}
+  const editData = {};
 
   let mode = "Add";
   if (queryobject.mode === `edit`) {
     mode = "Edit";
   }
 
-  const { isLoading: isEditLoading, data, dataUpdatedAt, isError, error } = useSingleAreaData(queryobject.id);
+  const {
+    isLoading: isEditLoading,
+    data,
+    dataUpdatedAt,
+    isError,
+    error,
+  } = useSingleAreaData(queryobject.id);
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is Required"),
@@ -58,7 +64,7 @@ function AreaForm() {
         Mode: `${mode}Area`,
         status: Number(status),
         ...values,
-        recordid: queryobject.id ?? '',
+        recordid: queryobject.id ?? "",
       };
       const formData = objectToFormData(reqObject);
 
@@ -72,7 +78,7 @@ function AreaForm() {
           if (success) {
             if (queryobject.mode === `edit`) {
               switchRoute(`/areas`, true);
-            }else{
+            } else {
               formik.resetForm();
             }
           }
@@ -92,12 +98,11 @@ function AreaForm() {
 
   useEffect(() => {
     if (data?.data?.success) {
-
       const areaDetail = data.data.areadetail;
 
       if (areaDetail) {
         const { name, remark, status } = areaDetail;
-  
+
         formik.setValues({
           name: name || "",
           remarks: remark || "",
@@ -105,7 +110,7 @@ function AreaForm() {
         });
       }
     }
-  }, [data?.data?.success, dataUpdatedAt, formik.setValues]);
+  }, [data]);
 
   return (
     <>

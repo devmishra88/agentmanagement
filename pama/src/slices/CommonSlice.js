@@ -6,6 +6,10 @@ const initialState = {
   toaststatus: false,
   toastmsg: ``,
   loaderstatus:false,
+  deletepopupposition:`bottom`,
+  deletepopupstatus: false,
+  candelete: false,
+  deletionrecordid:``,
 };
 
 export const CommonSlice = createSlice({
@@ -36,9 +40,15 @@ export const CommonSlice = createSlice({
         ...action.payload,
       };
     },
+    confirmDelete: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
   },
 });
 
-export const { togglePopup, toggleMenu, handleToastMsg, toggleLoader } = CommonSlice.actions;
+export const { togglePopup, toggleMenu, handleToastMsg, toggleLoader, confirmDelete } = CommonSlice.actions;
 
 export default CommonSlice.reducer;
