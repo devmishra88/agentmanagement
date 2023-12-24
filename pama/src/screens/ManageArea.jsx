@@ -31,7 +31,6 @@ function ManageArea() {
       dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
       deleteArea(deletionrecordid)
     }
-    // dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
   }, [deletionrecordid, candelete]);
 
   if (isError) {
