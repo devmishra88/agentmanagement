@@ -15,7 +15,7 @@ const AddFab = ({ ...props }) => {
     >
       <Fab variant="extended" color="primary" {...rest}>
         <AddIcon />
-        <Box sx={{ marginLeft: 1 }}>
+        <Box sx={{ marginLeft: 1, width:`max-content` }}>
           <Typography variant="button">{children}</Typography>
         </Box>
       </Fab>

@@ -12,7 +12,7 @@ import {
   LockResetIcon,
 } from "./index";
 
-import { Dashboard, AreaForm, ManageTemplate, ManageArea } from "../screens";
+import { Dashboard, AreaForm, ManageTemplate, ManageArea, ManageNewspaper } from "../screens";
 
 export const screens = [
     { screen: <Dashboard />, navlink: `dashboard` },
@@ -43,7 +43,7 @@ export const moduleitems = [
     link: `/newspapers`,
     iconcolor: `#4cb5f6`,
     titlecolor: `#007aff`,
-    screen: <ManageTemplate />,
+    screen: <ManageNewspaper />,
   },
   {
     iconname: <MapsHomeWorkIcon />,

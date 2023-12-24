@@ -14,7 +14,7 @@ import { Grid, Box, Container } from "@mui/material";
 
 import { AppHeader, AppFooter } from "../components";
 
-function AreaForm() {
+function NewspaperForm() {
   const queryParams = useQueryParams();
   const switchRoute = useSwitchRoute();
   const dispatch = useDispatch();
@@ -114,7 +114,7 @@ function AreaForm() {
 
   return (
     <>
-      <AppHeader>{mode} Area</AppHeader>
+      <AppHeader>{mode} Newspaper</AppHeader>
       <Container maxWidth="lg">
         <Box mt={1} spacing={1}>
           <Box>
@@ -167,4 +167,4 @@ function AreaForm() {
   );
 }
 
-export default AreaForm;
+export default NewspaperForm;
