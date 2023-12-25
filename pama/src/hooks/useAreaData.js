@@ -37,7 +37,7 @@ export const useAddAreaData = () => {
   const queryClient = useQueryClient();
 
   return useMutation(addEditArea, {
-    onMutate: async (newArea) => {
+    /*onMutate: async (newArea) => {
       await queryClient.cancelQueries(`areas`);
       const previousAreaData = queryClient.getQueryData(`areas`);
 
@@ -53,9 +53,13 @@ export const useAddAreaData = () => {
       return {
         previousAreaData,
       };
+    },*/
+    onSuccess: (data) => {
+      queryClient.setQueryData(`areas`, data);
     },
     onError: (_error, _area, context) => {
-      queryClient.setQueryData(`areas`, context.previousAreaData);
+      /*queryClient.setQueryData(`areas`, context.previousAreaData);*/
+      queryClient.invalidateQueries(`areas`);
     },
     onSettled: () => {
       queryClient.invalidateQueries(`areas`);
