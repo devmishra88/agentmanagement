@@ -9,6 +9,7 @@ import Logoutdrawer from "./Logoutdrawer"
 import AddFab from "./AddFab"
 import SingleAreaCard from "./SingleAreaCard"
 import Deleteconfirm from "./Deleteconfirm"
+import SingleGeneralDatacard from "./SingleGeneralDatacard"
 
 export {
     Copyright,
@@ -22,4 +23,5 @@ export {
     Logoutdrawer,
     AddFab,
     Deleteconfirm,
+    SingleGeneralDatacard,
 }

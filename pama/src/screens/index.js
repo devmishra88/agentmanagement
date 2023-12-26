@@ -5,7 +5,7 @@ import AreaForm from "./AreaForm";
 import ManageArea from "./ManageArea";
 import AddAgent from "./AddAgent";
 import ManageTemplate from "./ManageTemplate";
-import NewspaperForm from "./AreaForm";
+import NewspaperForm from "./NewspaperForm";
 import ManageNewspaper from "./ManageNewspaper"; 
 
 const publicscreens = [

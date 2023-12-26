@@ -15,7 +15,9 @@ function FormikControl(props) {
     case "input":
       return <Input {...rest} />;
     case "number":
-      return <PhoneInput {...rest} />;
+      return <Input {...rest} />;
+    case "phone":
+      return <PhoneInput {...rest} />;      
     case "textarea":
       return <Textarea {...rest} />;
     case "select":

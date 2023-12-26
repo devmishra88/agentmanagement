@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleLoader, confirmDelete } from "../slices/CommonSlice";
-import { AppHeader, SingleAreaCard, AddFab } from "../components";
+import { AppHeader, SingleGeneralDatacard, AddFab } from "../components";
 import useSwitchRoute from "../hooks/useSwitchRoute";
-import { useAreasData } from "../hooks/useAreaData";
+import { useNewspapersData } from "../hooks/useNewspaperData";
 
 function ManageNewspaper() {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function ManageNewspaper() {
     // console.log(`Perform side effect after encountering error`, error);
   };
 
-  const { isLoading, isFetching, data, isError, error, deleteArea /*, refetch*/ } = useAreasData(onSuccess, onError);
+  const { isLoading, isFetching, data, isError, error, deleteArea /*, refetch*/ } = useNewspapersData(onSuccess, onError);
 
   useEffect(() => {
     dispatch(toggleLoader({ loaderstatus: isLoading || isFetching }));
@@ -41,7 +41,7 @@ function ManageNewspaper() {
     <>
       <AppHeader>Manage Newspaper</AppHeader>
       <Container maxWidth="lg">
-        <Grid container mt={1} spacing={1}>
+        <Grid container mt={1} mb={8} spacing={1}>
           {data?.data?.recordlist?.length > 0 ? (
             <Typography
               sx={{
@@ -51,14 +51,15 @@ function ManageNewspaper() {
                 fontWeight: `bold`,
               }}
             >
-              Total Area : {data?.data?.recordlist?.length}
+              Total Newspaper : {data?.data?.recordlist?.length}
             </Typography>
           ) : null}
           {data?.data?.recordlist?.map((area, index) => {
             return (
-              <SingleAreaCard
+              <SingleGeneralDatacard
                 key={area.id}
                 {...area}
+                formroute="newspaper"
                 deleteCallback={() =>
                   dispatch(
                     confirmDelete({

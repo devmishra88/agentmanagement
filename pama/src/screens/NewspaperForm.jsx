@@ -8,13 +8,13 @@ import { useDispatch } from "react-redux";
 import { handleToastMsg, toggleLoader } from "../slices/CommonSlice";
 import useQueryParams from "../hooks/useQueryParams";
 import useSwitchRoute from "../hooks/useSwitchRoute";
-import { useSingleAreaData } from "../hooks/useAreaData";
+import { useSingleNewspaperData } from "../hooks/useNewspaperData";
 
 import { Grid, Box, Container } from "@mui/material";
 
 import { AppHeader, AppFooter } from "../components";
 
-function AreaForm() {
+function NewspaperForm() {
   const queryParams = useQueryParams();
   const switchRoute = useSwitchRoute();
   const dispatch = useDispatch();
@@ -37,20 +37,25 @@ function AreaForm() {
     dataUpdatedAt,
     isError,
     error,
-  } = useSingleAreaData(queryobject.id);
+  } = useSingleNewspaperData(queryobject.id);
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is Required"),
+    // aircharge: Yup.string().required("Air charge is Required"),
+    aircharge: Yup.number()
+    .required("Air charge is Required")
+    .integer("Air charge must be an integer")
+    .min(0, "Air charge must be greater than or equal to 0")
   });
 
   const initialValues = {
     name: "",
-    remarks: "",
+    aircharge:"",
     status: false,
   };
 
   const mutation = useMutation((userData) =>
-    secureRequest({ url: `/area.php`, method: `POST`, data: userData }).then(
+    secureRequest({ url: `/newspaper.php`, method: `POST`, data: userData }).then(
       (response) => response
     )
   );
@@ -61,7 +66,7 @@ function AreaForm() {
     onSubmit: (values) => {
       const { status } = values;
       const reqObject = {
-        Mode: `${mode}Area`,
+        Mode: `${mode}Newspaper`,
         status: Number(status),
         ...values,
         recordid: queryobject.id ?? "",
@@ -77,7 +82,7 @@ function AreaForm() {
 
           if (success) {
             if (queryobject.mode === `edit`) {
-              switchRoute(`/areas`, true);
+              switchRoute(`/newspapers`, true);
             } else {
               formik.resetForm();
             }
@@ -98,14 +103,14 @@ function AreaForm() {
 
   useEffect(() => {
     if (data?.data?.success) {
-      const areaDetail = data.data.areadetail;
+      const detail = data?.data?.detail;
 
-      if (areaDetail) {
-        const { name, remark, status } = areaDetail;
+      if (detail) {
+        const { name, aircharge, remark, status } = detail;
 
         formik.setValues({
           name: name || "",
-          remarks: remark || "",
+          aircharge: aircharge || "",
           status: Number(status) === 1,
         });
       }
@@ -114,7 +119,7 @@ function AreaForm() {
 
   return (
     <>
-      <AppHeader>{mode} Area</AppHeader>
+      <AppHeader>{mode} Newspaper</AppHeader>
       <Container maxWidth="lg">
         <Box mt={1} spacing={1}>
           <Box>
@@ -133,14 +138,15 @@ function AreaForm() {
               />
               <FormikControl
                 control="input"
-                type="textarea"
-                label="Remarks"
-                name="remarks"
-                value={formik.values.remarks}
+                type="number"
+                label="Air Charge"
+                name="aircharge"
+                value={formik.values.aircharge}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.remarks && Boolean(formik.errors.remarks)}
-                helperText={formik.touched.remarks && formik.errors.remarks}
+                error={formik.touched.aircharge && Boolean(formik.errors.aircharge)}
+                helperText={formik.touched.aircharge && formik.errors.aircharge}
+                required
               />
               <FormikControl
                 control="toggle"
@@ -167,4 +173,4 @@ function AreaForm() {
   );
 }
 
-export default AreaForm;
+export default NewspaperForm;

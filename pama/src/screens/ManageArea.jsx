@@ -41,7 +41,7 @@ function ManageArea() {
     <>
       <AppHeader>Manage Area</AppHeader>
       <Container maxWidth="lg">
-        <Grid container mt={1} spacing={1}>
+        <Grid container mt={1} mb={8} spacing={1}>
           {data?.data?.recordlist?.length > 0 ? (
             <Typography
               sx={{

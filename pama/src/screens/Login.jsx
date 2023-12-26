@@ -101,7 +101,7 @@ export default function SignIn() {
         <form onSubmit={formik.handleSubmit} noValidate>
           <FormikControl
             control="input"
-            type="number"
+            type="phone"
             label="Phone Number"
             name="phone"
             maxLength={10}
