@@ -10,6 +10,8 @@ import AddFab from "./AddFab"
 import SingleAreaCard from "./SingleAreaCard"
 import Deleteconfirm from "./Deleteconfirm"
 import SingleGeneralDatacard from "./SingleGeneralDatacard"
+import Title from "./Title"
+import ManageContainer from "./ManageContainer"
 
 export {
     Copyright,
@@ -24,4 +26,6 @@ export {
     AddFab,
     Deleteconfirm,
     SingleGeneralDatacard,
+    Title,
+    ManageContainer,
 }
