@@ -12,11 +12,10 @@ import {
   LockResetIcon,
 } from "./index";
 
-import { Dashboard, AreaForm, ManageTemplate, ManageArea, ManageNewspaper } from "../screens";
+import { Dashboard, AreaForm, ManageTemplate, ManageArea, ManageNewspaper, ManageAgent } from "../screens";
 
 export const screens = [
     { screen: <Dashboard />, navlink: `dashboard` },
-    { screen: <AreaForm />, navlink: `area` },
     { screen: <ManageTemplate />, navlink: `managetemplate` },
   ];
 
@@ -35,7 +34,7 @@ export const moduleitems = [
     link: `/agents`,
     iconcolor: `#d32d41`,
     titlecolor: `#007aff`,
-    screen: <ManageTemplate />,
+    screen: <ManageAgent />,
   },
   {
     iconname: <NewspaperIcon />,

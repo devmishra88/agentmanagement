@@ -7,10 +7,10 @@ import { MenuIcon } from "../constants";
 function AppHeader({ ...props }) {
   const dispatch = useDispatch();
 
-  const { children } = props;
+  const { children, spacing = 1 , applyshadow = true} = props;
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ boxShadow:applyshadow ? `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`:`unset` }}>
         <Toolbar
           sx={{
             background: `#F7F7F8`,
@@ -48,7 +48,7 @@ function AppHeader({ ...props }) {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar sx={{ mt: 1 }} />
+      <Toolbar sx={{ mb: spacing }} />
     </>
   );
 }

@@ -7,6 +7,8 @@ import AddAgent from "./AddAgent";
 import ManageTemplate from "./ManageTemplate";
 import NewspaperForm from "./NewspaperForm";
 import ManageNewspaper from "./ManageNewspaper"; 
+import AgentForm from "./AgentForm";
+import ManageAgent from "./ManageAgent"; 
 
 const publicscreens = [
   { screen: <Login />, navlink: `/` },
@@ -16,6 +18,7 @@ const publicscreens = [
 const secureaddscreens = [
   { screen: <AreaForm />, navlink: `/area` },
   { screen: <NewspaperForm />, navlink: `/newspaper` },
+  { screen: <AgentForm />, navlink: `/agent` },
 ];
 
 export {
@@ -28,6 +31,8 @@ export {
   ManageTemplate,
   NewspaperForm,
   ManageNewspaper,
+  AgentForm,
+  ManageAgent,
   publicscreens,
   secureaddscreens,
 };

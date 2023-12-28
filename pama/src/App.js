@@ -14,8 +14,8 @@ import {
 
 import { moduleitems, configuration } from "./constants";
 
-import { /*Dashboard,*/ publicscreens, secureaddscreens } from "./screens";
-const Dashboard = lazy(() => import("./screens/Dashboard"));
+import { Dashboard, publicscreens, secureaddscreens } from "./screens";
+// const Dashboard = lazy(() => import("./screens/Dashboard"));
 
 const queryClient = new QueryClient();
 
